@@ -40,11 +40,38 @@
     .ov{padding:14px 8px;gap:12px}
     #chars{gap:8px;width:100%}
     #chars .card{width:calc(50% - 4px);box-sizing:border-box;padding:8px 6px}
+    #petList{gap:8px;width:100%}#petList .card{width:calc(50% - 4px);box-sizing:border-box;padding:8px 6px}#petList .card p{font-size:11px;margin:2px 0}#petList .card h3{font-size:16px}
     #chars .card canvas{width:72px;height:75px}
     #chars .card h3{font-size:16px;margin:4px 0 2px}
     #chars .card p{font-size:11px;margin:2px 0}
     #chars .tag{font-size:10px;padding:1px 5px}
     h1{font-size:48px}h2{font-size:28px}
+  }
+  button.mini{min-width:0;font-size:15px;padding:5px 11px;border-width:3px;box-shadow:0 3px 0 var(--ink)}
+  #petTabs{gap:6px}
+  .card.off{opacity:.6;cursor:default}
+  .xpb{height:10px;background:var(--ink);border:2px solid var(--ink);border-radius:3px;margin:4px 0 2px;overflow:hidden}.xpb i{display:block;height:100%;background:var(--gold)}
+  #pets .card,#pklvl .card{width:170px}
+  #gc{width:min(320px,52vh);height:auto;image-rendering:pixelated}
+  #gacha{background:rgba(8,6,16,.9);cursor:pointer;gap:10px}
+  #gName{min-height:1.1em;text-align:center}
+  /* Handy im Hochformat: zum Drehen auffordern */
+  #rot{display:none;position:fixed;inset:0;z-index:99;background:#14101e;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:24px;box-sizing:border-box;text-align:center}
+  #rot .ph{width:74px;height:128px;border:6px solid var(--gold);border-radius:14px;box-sizing:border-box;position:relative;animation:rot 2.2s ease-in-out infinite}
+  #rot .ph::after{content:"";position:absolute;left:50%;bottom:7px;width:18px;height:4px;margin-left:-9px;background:var(--gold);border-radius:2px}
+  @keyframes rot{0%,20%{transform:rotate(0)}60%,100%{transform:rotate(-90deg)}}
+  @media (pointer:coarse) and (orientation:portrait) and (max-width:900px){#rot{display:flex}}
+  /* Handy im Querformat: wenig Höhe, Menüs kompakter */
+  @media (max-height:520px){
+    .ov{padding:10px 12px;gap:8px}
+    h1{font-size:34px;text-shadow:3px 3px 0 #b3202a,5px 5px 0 var(--ink)}h1 br{display:none}h2{font-size:24px}
+    .sub{font-size:13px}
+    button,a.btn{font-size:17px;padding:7px 16px;min-width:190px;box-shadow:0 4px 0 var(--ink)}
+    #main .col,#pause .col,#over .col{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:10px;max-width:660px}
+    .card{width:168px;padding:8px}.card p{font-size:12px;margin:2px 0}.card h3{font-size:17px;margin:4px 0 2px}
+    #chars .card{width:150px}#chars .card canvas{width:72px;height:75px}
+    .panel{padding:12px 18px}.set{font-size:15px;gap:8px 12px}
+    #gc{width:min(240px,46vh)}
   }
   #touch{display:none}
   .tb{position:fixed;z-index:5;min-width:0;padding:0;border-radius:50%;border:3px solid var(--ink);box-shadow:none;touch-action:none;-webkit-tap-highlight-color:transparent}
@@ -59,13 +86,15 @@
 <div id="touch"><button id="bPause" class="tb" aria-label="Pause">II</button><button id="bDash" class="tb" aria-label="Ausweichen">DASH</button></div>
 
 <div id="main" class="ov on">
-  <h1>ANIME<br>SURVIVORS</h1>
+  <h1>ANIME <br>SURVIVORS</h1>
   <p class="sub">Überlebe die Horde.</p>
   <p class="sub" id="ballMain"></p>
+  <p class="key" id="ver"></p>
   <div class="col">
     <button id="bPlay">Spielen</button>
     <button id="bSet" class="sec">Einstellungen</button>
     <button id="bPets" class="sec">Begleiter</button>
+    <button id="bLv" class="sec">Level Up</button>
     <a id="bGood" class="btn sec" href="https://www.paypal.me/numng" target="_blank" rel="noopener">Gute Tat</a>
   </div>
 </div>
@@ -79,9 +108,25 @@
 <div id="pets" class="ov">
   <h2>Begleiter</h2>
   <p class="sub" id="ballInfo"></p>
+  <p class="sub" id="rarInfo"></p>
   <button id="bSummon">Beschwören</button>
+  <div class="row" id="petTabs"></div>
   <div class="row" id="petList"></div>
   <button id="bBack3" class="sec">Zurück</button>
+</div>
+
+<div id="pklvl" class="ov">
+  <h2>Level Up</h2>
+  <p class="sub" id="lvInfo" style="max-width:720px"></p>
+  <div class="row" id="lvList"></div>
+  <button id="bBack4" class="sec">Zurück</button>
+</div>
+
+<div id="gacha" class="ov">
+  <canvas id="gc" width="320" height="320"></canvas>
+  <h2 id="gName"></h2>
+  <p class="sub" id="gInfo"></p>
+  <div class="row" id="gBtns"><button id="bAgain">Nochmal</button><button id="bGOk" class="sec">Weiter</button></div>
 </div>
 
 <div id="settings" class="ov">
@@ -120,6 +165,8 @@
     <button id="bMenu" class="sec">Hauptmenü</button>
   </div>
 </div>
+
+<div id="rot"><div class="ph"></div><h2>Bitte Handy drehen</h2><p class="sub">Anime Survivors wird im Querformat gespielt.</p></div>
 
 <script src="game.js"></script>
 </body>
