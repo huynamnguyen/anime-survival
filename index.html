@@ -35,6 +35,7 @@
   .key{opacity:.55;font-size:12px}
   .panel{background:var(--panel);border:4px solid var(--ink);box-shadow:0 0 0 2px var(--line) inset,0 6px 0 var(--ink);padding:22px 26px;border-radius:4px;min-width:min(420px,86vw);box-sizing:border-box}
   .set{display:grid;grid-template-columns:auto 1fr 48px;gap:12px 14px;align-items:center;font-size:18px}
+  input[type=checkbox]{width:26px;height:26px;margin:0;accent-color:var(--gold);justify-self:start;cursor:pointer}
   input[type=range]{width:100%;accent-color:var(--gold);height:22px}
   @media (max-width:640px){
     .ov{padding:14px 8px;gap:12px}
@@ -51,6 +52,10 @@
   #petTabs,#petRoles{gap:6px}
   #petCount{margin:0;text-align:center;opacity:.75;font-size:13px}
   .card.off{opacity:.6;cursor:default}
+  .card.stg{width:260px}.card.stg canvas{width:240px;height:120px;background:#14101e;image-rendering:pixelated}
+  .card.stg p{font-size:13px;line-height:1.35;margin:6px 0 0}
+  @media (max-width:640px){#stageList{width:100%}#stageList .card.stg{width:calc(50% - 4px);box-sizing:border-box;padding:8px}#stageList .card.stg canvas{width:100%;height:auto}#stageList .card.stg p{font-size:11px}#stages{padding-top:56px}}
+  @media (max-height:520px){#stageList .card.stg{width:200px}#stageList .card.stg canvas{width:180px;height:90px}#stageList .card.stg p{font-size:11px;margin:3px 0 0}}
   .xpb{height:10px;background:var(--ink);border:2px solid var(--ink);border-radius:3px;margin:4px 0 2px;overflow:hidden}.xpb i{display:block;height:100%;background:var(--gold)}
   #pets .card,#pklvl .card{width:170px}
   #gc{width:min(320px,52vh);height:auto;image-rendering:pixelated}
@@ -138,6 +143,13 @@
   <button id="bBack1" class="sec back">Zurück</button>
 </div>
 
+<div id="stages" class="ov">
+  <h2>Stage-Auswahl</h2>
+  <p class="sub">Wähle den Schauplatz für deinen Run</p>
+  <div class="row" id="stageList"></div>
+  <button id="bBack5" class="sec back">Zurück</button>
+</div>
+
 <div id="pets" class="ov">
   <h2>Begleiter</h2>
   <p class="sub" id="ballInfo"></p>
@@ -171,6 +183,8 @@
       <label for="vMaster">Gesamtlautstärke</label><input id="vMaster" type="range" min="0" max="100"><span id="vMasterN"></span>
       <label for="vMusic">Musik</label><input id="vMusic" type="range" min="0" max="100"><span id="vMusicN"></span>
       <label for="vSfx">Effekte</label><input id="vSfx" type="range" min="0" max="100"><span id="vSfxN"></span>
+      <label for="tShake">Screen-Shake</label><input id="tShake" type="checkbox"><span></span>
+      <label for="tDmg">Schadenszahlen</label><input id="tDmg" type="checkbox"><span></span>
     </div>
   </div>
   <button id="bBack2" class="sec back">Zurück</button>
