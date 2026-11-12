@@ -177,6 +177,9 @@ function buildFrame(L, f, atk) {
     case 'igris': r(10, 21 + b, 12, 1, GOLD); r(11, 23 + b, 10, 4, '#a01c2c'); r(12, 23 + b, 8, 1, '#e85a68'); r(15, 23 + b, 2, 6, '#2e0810'); r(10, 29 + b, 12, 2, '#16060a'); r(15, 29 + b, 2, 2, GOLD); r(7, 20 + b, 5, 3, '#c8283a'); r(20, 20 + b, 5, 3, '#c8283a'); r(7, 20 + b, 5, 1, GOLD); r(20, 20 + b, 5, 1, GOLD); break;
     case 'toji': r(10, 29 + b, 12, 2, '#101014'); r(15, 23 + b, 1, 5, '#2a2a34'); r(12, 24 + b, 3, 1, '#2a2a34'); r(17, 24 + b, 3, 1, '#2a2a34'); r(19, 17 + b, 6, 5, '#8a6a9a'); r(21, 18 + b, 1, 1, WH); r(23, 18 + b, 1, 1, WH); r(20, 21 + b, 4, 1, '#5a3a6a'); break;
     case 'madara': r(10, 21 + b, 12, 2, '#a82828'); r(10, 24 + b, 5, 3, '#a82828'); r(17, 24 + b, 5, 3, '#a82828'); r(10, 28 + b, 12, 2, '#8a1e1e'); r(10, 23 + b, 12, 1, '#5a1010'); r(10, 27 + b, 12, 1, '#5a1010'); r(8, 20 + b, 3, 4, '#a82828'); r(21, 20 + b, 3, 4, '#a82828'); break;
+    case 'griffith': r(12, 23 + b, 8, 1, '#b8bcc8'); r(15, 22 + b, 2, 8, '#c8ccd8'); r(11, 26 + b, 10, 1, '#b8bcc8'); r(10, 29 + b, 12, 2, '#8a8e9c'); r(15, 29 + b, 2, 2, GOLD); r(7, 20 + b, 5, 3, '#f4f6fc'); r(20, 20 + b, 5, 3, '#f4f6fc'); r(7, 22 + b, 5, 1, '#a8acb8'); r(20, 22 + b, 5, 1, '#a8acb8'); break;
+    case 'makima': r(13, 21 + b, 6, 1, '#dcdce4'); r(15, 21 + b, 2, 8, '#1a1a22'); r(10, 30 + b, 12, 1, '#1a1a22'); break;
+    case 'meruem': r(2, 26 + b, 3, 6, sk); r(4, 30 + b, 6, 2, sk); r(1, 22 + b, 2, 5, '#3f7a6a'); r(12, 22 + b, 8, 4, '#e6f4e0'); r(15, 26 + b, 2, 3, '#a8c8a0'); r(10, 21 + b, 2, 2, '#3f7a6a'); r(20, 21 + b, 2, 2, '#3f7a6a'); r(10, 29 + b, 12, 2, '#3f7a6a'); break;
     default: if (L.tie) { r(14, 21 + b, 4, 6, WH); r(15, 21 + b, 2, 7, '#c0392b'); } else if (L.stripe) r(10, 25 + b, 12, 2, L.stripe);
   }
   if (L.mon === 'hollow') { r(13, 23 + b, 6, 6, '#6a6878'); r(14, 24 + b, 4, 4, '#08080c'); }
@@ -241,6 +244,9 @@ function buildFrame(L, f, atk) {
     case 'plume': r(13, hy - 4, 5, 4, h); r(5, hy - 2, 9, 3, h); r(3, hy + 1, 4, 13, h); r(2, hy + 12, 3, 9, h); r(4, hy + 2, 1, 10, hl); break;
     case 'madara': cap(3); spike(8, 4, 4); spike(13, 5, 5); spike(19, 4, 4); r(5, hy + 1, 4, 18, h); r(3, hy + 6, 3, 14, h); r(23, hy + 1, 4, 16, h); r(26, hy + 6, 2, 10, h); r(17, hy + 4, 6, 6, h); r(10, hy + 4, 3, 2, h); r(6, hy + 3, 1, 12, hl); break;
     case 'flame': cap(2); r(9, hy - 3, 14, 3, h); r(11, hy - 6, 11, 3, h); r(14, hy - 8, 8, 2, h); r(17, hy - 10, 4, 2, h); r(12, hy - 5, 1, 6, hl); r(8, hy + 3, 2, 3, h); r(22, hy + 3, 2, 3, h); break;
+    case 'griffith': cap(3); r(6, hy + 2, 3, 15, h); r(23, hy + 2, 3, 15, h); r(5, hy + 8, 1, 7, h); r(26, hy + 8, 1, 7, h); r(7, hy + 17, 2, 2, h); r(23, hy + 17, 2, 2, h); r(10, hy + 4, 3, 2, h); r(19, hy + 4, 3, 1, h); r(7, hy + 5, 1, 10, hd); r(24, hy + 6, 1, 9, hd); break;
+    case 'makima': cap(3); r(8, hy + 4, 16, 1, h); r(8, hy + 5, 4, 2, h); r(20, hy + 5, 4, 2, h); r(7, hy + 3, 2, 8, h); r(23, hy + 3, 2, 8, h); r(4, hy + 8, 3, 4, h); r(3, hy + 12, 3, 4, hd); r(4, hy + 16, 3, 4, h); r(3, hy + 20, 2, 3, hd); break;
+    case 'meruem': r(11, hy - 2, 10, 1, h); r(9, hy - 1, 14, 2, h); r(8, hy + 1, 16, 3, h); r(8, hy + 4, 2, 4, h); r(22, hy + 4, 2, 4, h); r(12, hy, 4, 1, hl); r(15, hy + 3, 2, 2, hd); break;
   }
   // --- Monster-Gesichter & Bösewicht-Details
   const sd = shade(sk, .6), sl = shade(sk, 1.25), DK = '#15121c', BONE = '#f0ece0';
@@ -278,6 +284,8 @@ function buildFrame(L, f, atk) {
     case 'pain': r(11, hy + 10, 1, 1, DK); r(21, hy + 10, 1, 1, DK); r(15, hy + 9, 1, 2, DK); r(18, hy + 9, 1, 2, DK); r(15, hy + 13, 1, 1, DK); r(18, hy + 13, 1, 1, DK); break;
     case 'hisoka': r(11, hy + 10, 2, 2, '#e860a0'); r(20, hy + 10, 1, 3, '#30b0a0'); break;
     case 'frieza': r(9, hy + 9, 2, 3, '#7a3ab0'); r(21, hy + 9, 2, 3, '#7a3ab0'); r(15, hy + 12, 3, 1, '#3a1a4a'); break;
+    case 'makima': r(14, hy + 8, 1, 1, '#a03010'); r(20, hy + 8, 1, 1, '#a03010'); break;
+    case 'meruem': r(9, hy + 9, 2, 3, '#3f7a6a'); r(21, hy + 9, 2, 3, '#3f7a6a'); break;
   }
   if (L.band) { r(8, hy + 3, 16, 3, L.band); r(12, hy + 3, 8, 3, '#c9d0da'); r(15, hy + 4, 2, 1, '#6a7080'); }
   bevel(c); outline(c);
@@ -303,61 +311,121 @@ function drawChar(c, L, x, y, sc, face, animT, moving, atk, mode) {
 // ================================================================ Charaktere
 const CHARS = {
   gojo: { name: 'Gojo Satoru', anime: 'Jujutsu Kaisen', tag: 'jjk', hp: 90, speed: 210, cd: .85, weapon: 'Rot', wdesc: 'Fernkampf: rote Kugeln, die explodieren',
-    perk: 'Unendlichkeit: immun gegen Fernangriffe', init(p) { p.rangedImmune = true; } },
+    perk: 'Unendlichkeit: immun gegen Fernangriffe', init(p) { p.rangedImmune = true; },
+    ult: { name: 'Unendliche Leere', desc: 'Sphärenentfaltung: alle Gegner im Bild erstarren, du bist unverwundbar und jede Sekunde trifft sie Informationsüberladung', dur: 8, cd: 75, col: '150,120,255',
+      mod: { freeze: true, take: 0 }, pulse: [{ every: 1, kind: 'screen', vfx: 'ring', dmg: 1.5, sfx: 'freeze' }] } },
   sukuna: { name: 'Ryomen Sukuna', anime: 'Jujutsu Kaisen', tag: 'jjk', villain: true, hp: 105, speed: 215, cd: .75, weapon: 'Zerlegen', wdesc: 'Nahkampf: unsichtbare Schnitte in weitem Bogen',
-    perk: 'König der Flüche: +20% Schaden, 10% kritische Treffer', init(p) { p.dmgMul = 1.2; p.crit = .1; } },
+    perk: 'König der Flüche: +20% Schaden, 10% kritische Treffer', init(p) { p.dmgMul = 1.2; p.crit = .1; },
+    ult: { name: 'Schrein der Verwüstung', desc: 'Domain Expansion: unsichtbare Schnitte zerlegen alles im Bild', dur: 10, cd: 80, col: '255,70,90', kind: 'melee',
+      mod: { take: .7 }, pulse: [{ every: .35, kind: 'screen', vfx: 'slash', dmg: .8, sfx: 'slash' }] } },
   saitama: { name: 'Saitama', anime: 'One Punch Man', tag: 'opm', hp: 130, speed: 200, cd: 1.0, weapon: 'Rote Faust', wdesc: 'Nahkampf: große rote Faust mit Rückstoß',
-    perk: '+50% Nahkampfschaden', init(p) { p.meleeMul = 1.5; } },
+    perk: '+50% Nahkampfschaden', init(p) { p.meleeMul = 1.5; },
+    ult: { name: 'Ernster Schlag', desc: 'Ein einziger ernster Schlag erschüttert das ganze Bild', dur: 1.8, cd: 90, col: '255,60,60', kind: 'melee',
+      mod: { take: 0, root: true }, pulse: [{ delay: 1.2, count: 1, kind: 'screen', vfx: 'quake', dmg: 25, shake: 1, sfx: 'big' }] } },
   garou: { name: 'Garou', anime: 'One Punch Man', tag: 'opm', villain: true, hp: 115, speed: 225, cd: .24, weapon: 'Felsbrecherfaust', wdesc: 'Nahkampf: fließende Schlagserie nach vorn',
-    perk: 'Heldenjäger: +20% Angriffstempo, +10% Nahkampfschaden', init(p) { p.rate = 1.2; p.meleeMul = 1.1; } },
+    perk: 'Heldenjäger: +20% Angriffstempo, +10% Nahkampfschaden', init(p) { p.rate = 1.2; p.meleeMul = 1.1; },
+    ult: { name: 'Fließende Felsbrecher-Serie', desc: 'Garou passt sich an: viel schnellere Schlagserie und Nachbilder', dur: 8, cd: 60, col: '255,200,120', kind: 'melee',
+      mod: { rate: 2.5, speed: 1.4, dmg: 1.3, ghost: true } } },
   ichigo: { name: 'Ichigo Kurosaki', anime: 'Bleach', tag: 'bl', hp: 110, speed: 215, cd: .8, weapon: 'Zangetsu', wdesc: 'Nahkampf: weiter Schwertschlag im Bogen',
-    perk: '+50% EXP', init(p) { p.xpMul = 1.5; } },
+    perk: '+50% EXP', init(p) { p.xpMul = 1.5; },
+    ult: { name: 'Bankai: Tensa Zangetsu', desc: 'Bankai: mehr Tempo und Schaden, dazu Getsuga-Wellen in alle Richtungen', dur: 12, cd: 75, col: '255,60,60', kind: 'melee',
+      mod: { speed: 1.5, rate: 1.8, dmg: 1.5, aura: 'Bankai' },
+      pulse: [{ every: 1.5, kind: 'volley', pat: 'ring', n: 8, dmg: 2.5, sfx: 'slash', shot: { type: 'getsuga', speed: 480, o: { r: 26, life: 1.2, left: Infinity } } }] } },
   aizen: { name: 'Sosuke Aizen', anime: 'Bleach', tag: 'bl', villain: true, hp: 100, speed: 205, cd: 1.0, weapon: 'Raikoho', wdesc: 'Fernkampf: Kido-Blitz, der zwischen Gegnern überspringt',
-    perk: 'Hogyoku: 15% weniger Schaden, +1 Leben pro Sekunde', init(p) { p.armor = .85; p.regen += 1; } },
+    perk: 'Hogyoku: 15% weniger Schaden, +1 Leben pro Sekunde', init(p) { p.armor = .85; p.regen += 1; },
+    ult: { name: 'Kurohitsugi', desc: 'Schwarzer Sarg: alle Gegner werden gebunden und am Ende zerschmettert', dur: 4, cd: 70, col: '160,90,255',
+      mod: { freeze: true, take: .5 }, pulse: [{ delay: 3.5, count: 1, kind: 'screen', vfx: 'pillar', dmg: 9, shake: .8, sfx: 'big' }] } },
   goku: { name: 'Son Goku', anime: 'Dragon Ball Z', tag: 'dbz', hp: 110, speed: 210, cd: .45, weapon: 'Ki-Blast', wdesc: 'Fernkampf: schnelle Ki-Kugeln, die durchschlagen',
-    perk: 'Saiyajin-Blut: +3% Schaden pro Level', init(p) { p.lvlDmg = .03; } },
+    perk: 'Saiyajin-Blut: +3% Schaden pro Level', init(p) { p.lvlDmg = .03; },
+    ult: { name: 'Super Saiyajin', desc: 'Goldene Aura: mehr Tempo, Schaden und Regeneration', dur: 14, cd: 80, col: '255,230,90',
+      mod: { speed: 1.3, rate: 1.8, dmg: 1.6, regen: 3, aura: 'SSJ' } } },
   vegeta: { name: 'Vegeta', anime: 'Dragon Ball Z', tag: 'dbz', hp: 100, speed: 205, cd: .26, weapon: 'Dauerfeuer', wdesc: 'Fernkampf: Sperrfeuer aus vielen kleinen Ki-Kugeln',
-    perk: 'Saiyajin-Stolz: bis +80% Schaden bei wenig Leben', init(p) { p.pride = .8; } },
+    perk: 'Saiyajin-Stolz: bis +80% Schaden bei wenig Leben', init(p) { p.pride = .8; },
+    ult: { name: 'Final Flash', desc: 'Energie sammeln, dann drei gewaltige Strahlen in Blickrichtung', dur: 2.4, cd: 55, col: '255,230,120',
+      mod: { take: .4, root: true }, pulse: [{ delay: 1.2, every: .3, count: 3, kind: 'beam', dmg: 6, w: 170, L: 1100, shake: .5, sfx: 'beam' }] } },
   frieza: { name: 'Freezer', anime: 'Dragon Ball Z', tag: 'dbz', villain: true, hp: 85, speed: 215, cd: .6, weapon: 'Todesstrahl', wdesc: 'Fernkampf: dünner Strahl, der alles durchbohrt',
-    perk: 'Tyrann: +25% Schaden', init(p) { p.dmgMul = 1.25; } },
+    perk: 'Tyrann: +25% Schaden', init(p) { p.dmgMul = 1.25; },
+    ult: { name: 'Todesstrahl-Hagel', desc: 'Dauerfeuer aus durchbohrenden Todesstrahlen auf die nächsten Gegner', dur: 6, cd: 65, col: '230,90,255',
+      mod: { take: .7 },
+      pulse: [{ every: .12, kind: 'volley', pat: 'aim', n: 2, spread: .3, dmg: 1.2, shot: { type: 'ki', speed: 820, o: { left: Infinity, r: 6, small: true, life: .8, cc: ['230,90,255', '160,0,220'], trail: '#e070ff' } } }] } },
   levi: { name: 'Levi Ackerman', anime: 'Attack on Titan', tag: 'aot', hp: 85, speed: 235, cd: .7, weapon: 'Wirbelschnitt', wdesc: 'Nahkampf: Klingenwirbel, der rundum trifft',
-    perk: 'Stärkster Soldat: +30% Angriffstempo', init(p) { p.rate = 1.3; } },
+    perk: 'Stärkster Soldat: +30% Angriffstempo', init(p) { p.rate = 1.3; },
+    ult: { name: 'Wirbelsturm-Schnitt', desc: 'Ackermann-Kraft: rasender Klingenwirbel rundum, dazu Nachbilder', dur: 8, cd: 55, col: '200,230,255', kind: 'melee',
+      mod: { speed: 1.7, rate: 2.2, dmg: 1.4, take: .5, ghost: true }, pulse: [{ every: .3, kind: 'nova', R: 130, dmg: 1.1, kb: 150, sfx: 'slash' }] } },
   eren: { name: 'Eren Yeager', anime: 'Attack on Titan', tag: 'aot', hp: 140, speed: 200, cd: 1.1, weapon: 'Titanenfaust', wdesc: 'Nahkampf: Titanenschlag mit Flächenschaden',
-    perk: 'Titanen-Regeneration: +1,5 Leben pro Sekunde', init(p) { p.regen += 1.5; } },
+    perk: 'Titanen-Regeneration: +1,5 Leben pro Sekunde', init(p) { p.regen += 1.5; },
+    ult: { name: 'Angriffstitan', desc: 'Titanenform: größere Reichweite, mehr Schaden, Regeneration und Stampfer', dur: 12, cd: 85, col: '255,140,60', kind: 'melee',
+      mod: { dmg: 1.5, area: 1.4, take: .5, regen: 12 }, pulse: [{ every: 1.2, kind: 'nova', R: 190, dmg: 2.2, kb: 420, shake: .3, sfx: 'boom' }] } },
   zeke: { name: 'Zeke Yeager', anime: 'Attack on Titan', tag: 'aot', villain: true, hp: 120, speed: 200, cd: 1.05, weapon: 'Steinhagel', wdesc: 'Fernkampf: Streuwurf aus zermahlenen Felsbrocken',
-    perk: 'Königliches Blut: +20% EXP, +20% Sammelradius', init(p) { p.xpMul = 1.2; p.magnet *= 1.2; } },
+    perk: 'Königliches Blut: +20% EXP, +20% Sammelradius', init(p) { p.xpMul = 1.2; p.magnet *= 1.2; },
+    ult: { name: 'Schrei des Königs', desc: 'Felsbrocken regnen auf die Gegner im Bild', dur: 7, cd: 70, col: '200,170,110',
+      mod: { take: .6 }, pulse: [{ every: .5, kind: 'rain', n: 5, R: 80, dmg: 1.8, sfx: 'boom' }] } },
   hinata: { name: 'Shoyo Hinata', anime: 'Haikyu!!', tag: 'hq', hp: 90, speed: 265, cd: .8, weapon: 'Schmetterball', wdesc: 'Fernkampf: Ball springt von Gegner zu Gegner',
-    perk: 'Sprungkraft: +25% Lauftempo, +30% Sammelradius', init(p) { p.magnet *= 1.3; } },
+    perk: 'Sprungkraft: +25% Lauftempo, +30% Sammelradius', init(p) { p.magnet *= 1.3; },
+    ult: { name: 'Flugsprung', desc: 'Der kleine Riese fliegt: sehr schnell, mit Nachbildern und Einschlägen', dur: 8, cd: 55, col: '255,170,50',
+      mod: { speed: 1.8, rate: 2.2, ghost: true }, pulse: [{ every: .9, kind: 'nova', R: 110, dmg: 1.5, sfx: 'ball' }] } },
   kageyama: { name: 'Tobio Kageyama', anime: 'Haikyu!!', tag: 'hq', hp: 100, speed: 210, cd: 1.0, weapon: 'Sprungaufschlag', wdesc: 'Fernkampf: Aufschlag, der die ganze Reihe durchschlägt',
-    perk: 'König des Feldes: 25% kritische Treffer (x2)', init(p) { p.crit = .25; } },
+    perk: 'König des Feldes: 25% kritische Treffer (x2)', init(p) { p.crit = .25; },
+    ult: { name: 'Königs-Vorlage', desc: 'Perfekter Pass: viel höheres Angriffstempo, mehr Schaden und Krit-Chance', dur: 9, cd: 60, col: '100,160,255',
+      mod: { rate: 2.4, dmg: 1.5, crit: .5 } } },
   oikawa: { name: 'Toru Oikawa', anime: 'Haikyu!!', tag: 'hq', villain: true, hp: 95, speed: 220, cd: 1.05, weapon: 'Killeraufschlag', wdesc: 'Fernkampf: Aufschlag, der beim Einschlag explodiert',
-    perk: 'Großkönig: +10% Schaden, +10% Angriffstempo', init(p) { p.dmgMul = 1.1; p.rate = 1.1; } },
+    perk: 'Großkönig: +10% Schaden, +10% Angriffstempo', init(p) { p.dmgMul = 1.1; p.rate = 1.1; },
+    ult: { name: 'Killeraufschlag-Salve', desc: 'Explodierende Aufschläge in alle Richtungen', dur: 8, cd: 65, col: '90,220,200',
+      mod: { rate: 1.5 }, pulse: [{ every: .6, kind: 'volley', pat: 'ring', n: 6, dmg: 2, sfx: 'ball', shot: { type: 'ball', speed: 600, o: { boom: 55, col: '90,220,200', life: 1.1, serve: true } } }] } },
   naruto: { name: 'Naruto Uzumaki', anime: 'Naruto', tag: 'nar', hp: 115, speed: 215, cd: .7, weapon: 'Shuriken', wdesc: 'Fernkampf: Wurfsterne, die durchschlagen',
-    perk: 'Neunschwänziger: 1x Wiederbelebung mit vollem Leben', init(p) { p.revives = 1; p.reviveFull = true; } },
+    perk: 'Neunschwänziger: 1x Wiederbelebung mit vollem Leben', init(p) { p.revives = 1; p.reviveFull = true; },
+    ult: { name: 'Kurama-Chakra-Modus', desc: 'Neunschwänziger-Mantel: schneller, stärker, regeneriert und ruft Schattendoppelgänger', dur: 14, cd: 85, col: '255,190,50',
+      mod: { speed: 1.4, rate: 1.8, dmg: 1.5, regen: 6 }, pulse: [{ every: 2, kind: 'clones', n: 2, dmg: 2.5 }] } },
   sasuke: { name: 'Sasuke Uchiha', anime: 'Naruto', tag: 'nar', hp: 100, speed: 220, cd: 1.0, weapon: 'Feuerkugel', wdesc: 'Fernkampf: große Flamme, die alles durchdringt',
-    perk: 'Sharingan: 20% weniger Schaden, 10% kritische Treffer', init(p) { p.armor = .8; p.crit = .1; } },
+    perk: 'Sharingan: 20% weniger Schaden, 10% kritische Treffer', init(p) { p.armor = .8; p.crit = .1; },
+    ult: { name: 'Susanoo', desc: 'Susanoo schützt dich und schleudert Flammenkugeln in alle Richtungen', dur: 10, cd: 75, col: '150,90,255',
+      mod: { take: .35 }, pulse: [{ every: .7, kind: 'volley', pat: 'ring', n: 6, dmg: 2, sfx: 'fire', shot: { type: 'fire', speed: 320, o: { r: 16, life: 1, left: Infinity } } }] } },
   pain: { name: 'Pain', anime: 'Naruto', tag: 'nar', villain: true, hp: 110, speed: 205, cd: 1.4, weapon: 'Shinra Tensei', wdesc: 'Druckwelle rundum, die alle Gegner wegschleudert',
-    perk: 'Rinnegan: +25% Flächengröße, +30% Sammelradius', init(p) { p.area = 1.25; p.magnet *= 1.3; } },
+    perk: 'Rinnegan: +25% Flächengröße, +30% Sammelradius', init(p) { p.area = 1.25; p.magnet *= 1.3; },
+    ult: { name: 'Chibaku Tensei', desc: 'Zieht alle Gegner zusammen und sprengt sie am Ende', dur: 6, cd: 80, col: '255,140,40',
+      mod: { pull: { R: 520, v: 260 }, take: .4 }, pulse: [{ delay: 5.6, count: 1, kind: 'nova', R: 420, dmg: 12, shake: .8, sfx: 'big' }] } },
   jotaro: { name: 'Jotaro Kujo', anime: 'JoJo', tag: 'jojo', hp: 120, speed: 205, cd: .2, weapon: 'Ora-Ora', wdesc: 'Nahkampf: Star Platinums Faustregen nach vorn',
-    perk: 'Präzision: 15% kritische Treffer, +15% Flächengröße', init(p) { p.crit = .15; p.area = 1.15; } },
+    perk: 'Präzision: 15% kritische Treffer, +15% Flächengröße', init(p) { p.crit = .15; p.area = 1.15; },
+    ult: { name: 'Star Platinum: The World', desc: 'Die Zeit steht still: Gegner erstarren, Star Platinum schlägt blitzschnell zu', dur: 5, cd: 70, col: '160,110,255', kind: 'melee',
+      mod: { freeze: true, rate: 3, dmg: 1.5 }, pulse: [{ every: .3, kind: 'nova', R: 120, dmg: 1.2, kb: 80, sfx: 'punch' }] } },
   dio: { name: 'DIO', anime: 'JoJo', tag: 'jojo', hp: 110, speed: 210, cd: .34, weapon: 'Muda-Muda', wdesc: 'Nahkampf: The Worlds schwere Schlagserie',
-    perk: 'Vampir: +0,6 Leben pro besiegtem Gegner', init(p) { p.leech = .6; } },
+    perk: 'Vampir: +0,6 Leben pro besiegtem Gegner', init(p) { p.leech = .6; },
+    ult: { name: 'The World: Road Roller', desc: 'Zeit steht still, dann kracht ein Walzenwagen auf alle Gegner um dich', dur: 3.2, cd: 80, col: '255,220,60', kind: 'melee',
+      mod: { freeze: true, take: 0 }, pulse: [{ delay: 2.6, count: 1, kind: 'nova', vfx: 'pillar', R: 440, dmg: 11, kb: 350, shake: .9, sfx: 'big' }] } },
   kira: { name: 'Yoshikage Kira', anime: 'JoJo', tag: 'jojo', villain: true, hp: 100, speed: 210, cd: 1.1, weapon: 'Killer Queen', wdesc: 'Fernkampf: Bombe mit großer Explosion',
-    perk: 'Bites the Dust: 1x Wiederbelebung, 15% kritische Treffer', init(p) { p.revives = 1; p.crit = .15; } },
+    perk: 'Bites the Dust: 1x Wiederbelebung, 15% kritische Treffer', init(p) { p.revives = 1; p.crit = .15; },
+    ult: { name: 'Bites the Dust', desc: 'Die Zeit springt zurück: volle Heilung, Explosion und Bomben um dich', dur: 7, cd: 80, col: '255,150,220',
+      mod: { take: .4 },
+      pulse: [{ delay: 0, count: 1, kind: 'heal', frac: 1, sfx: 'heal' }, { delay: 0, count: 1, kind: 'nova', R: 380, dmg: 6, sfx: 'boom' },
+        { every: 1.2, kind: 'volley', pat: 'ring', n: 4, dmg: 2.5, sfx: 'shoot', shot: { type: 'red', speed: 380, o: { boom: 70, col: '255,150,220', cc: ['255,150,220', '220,40,160'], trail: '#ff9ae0' } } }] } },
   gon: { name: 'Gon Freecss', anime: 'Hunter x Hunter', tag: 'hxh', hp: 120, speed: 215, cd: 1.5, weapon: 'Jajanken', wdesc: 'Nahkampf: aufgeladener Schlag mit riesigem Rückstoß',
-    perk: 'Potenzial: +2% Schaden und +3 max. Leben pro Level', init(p) { p.lvlDmg = .02; p.lvlHp = 3; } },
+    perk: 'Potenzial: +2% Schaden und +3 max. Leben pro Level', init(p) { p.lvlDmg = .02; p.lvlHp = 3; },
+    ult: { name: 'Jajanken: Gu', desc: 'Gon sammelt alle Kraft in der Faust und schlägt einmal gewaltig zu', dur: 3.5, cd: 70, col: '255,220,80', kind: 'melee',
+      mod: { take: .4, root: true }, pulse: [{ delay: 2.8, count: 1, kind: 'nova', R: 500, dmg: 14, kb: 700, shake: .9, sfx: 'big' }] } },
   killua: { name: 'Killua Zoldyck', anime: 'Hunter x Hunter', tag: 'hxh', hp: 90, speed: 240, cd: .9, weapon: 'Donnerschlag', wdesc: 'Fernkampf: Blitz, der zwischen Gegnern überspringt',
-    perk: 'Assassine: +15% Lauftempo, +15% Angriffstempo', init(p) { p.rate = 1.15; } },
+    perk: 'Assassine: +15% Lauftempo, +15% Angriffstempo', init(p) { p.rate = 1.15; },
+    ult: { name: 'Godspeed', desc: 'Narukami: +200 % Angriffs- und Lauftempo, mit Blitzaura und Nachbildern', dur: 10, cd: 60, col: '120,200,255',
+      mod: { speed: 3, rate: 3, ghost: true, aura: 'God' } } },
   hisoka: { name: 'Hisoka Morow', anime: 'Hunter x Hunter', tag: 'hxh', villain: true, hp: 100, speed: 230, cd: .6, weapon: 'Kartenwurf', wdesc: 'Fernkampf: Fächer aus scharfen Spielkarten',
-    perk: 'Bungee Gum: +50% Sammelradius, 20% kritische Treffer', init(p) { p.magnet *= 1.5; p.crit = .2; } },
+    perk: 'Bungee Gum: +50% Sammelradius, 20% kritische Treffer', init(p) { p.magnet *= 1.5; p.crit = .2; },
+    ult: { name: 'Bungee Gum: Joker', desc: 'Kartenhagel aus Spielkarten in alle Richtungen', dur: 8, cd: 65, col: '255,80,150',
+      mod: { take: .6 }, pulse: [{ every: .4, kind: 'volley', pat: 'ring', n: 10, dmg: 1.3, sfx: 'slash', shot: { type: 'card', speed: 560, o: { left: 3, r: 8, life: .9 } } }] } },
   jinwoo: { name: 'Sung Jinwoo', anime: 'Solo Leveling', tag: 'sl', hp: 105, speed: 225, cd: .6, weapon: 'Dämonenkönig-Dolche', wdesc: 'Nahkampf: schnelle Dolchhiebe in weitem Bogen',
-    perk: 'Erhebe dich: 12% der besiegten Gegner kämpfen 8 s als Schatten für dich', init(p) { p.arise = .12; } },
+    perk: 'Erhebe dich: 12% der besiegten Gegner kämpfen 8 s als Schatten für dich', init(p) { p.arise = .12; },
+    ult: { name: 'Schattenarmee', desc: 'Monarch der Schatten: beschwört laufend Schattensoldaten', dur: 15, cd: 85, col: '110,90,255', kind: 'melee',
+      mod: { speed: 1.2, rate: 1.5 }, pulse: [{ every: 1, kind: 'clones', n: 3, dmg: 2.5, shadow: true }] } },
   beru: { name: 'Beru', anime: 'Solo Leveling', tag: 'sl', villain: true, hp: 125, speed: 235, cd: .26, weapon: 'Klauenhagel', wdesc: 'Nahkampf: rasende Klauenhiebe nach vorn',
-    perk: 'Gefräßig: +0,5 Leben pro besiegtem Gegner, +15% Angriffstempo', init(p) { p.leech = .5; p.rate = 1.15; } },
+    perk: 'Gefräßig: +0,5 Leben pro besiegtem Gegner, +15% Angriffstempo', init(p) { p.leech = .5; p.rate = 1.15; },
+    ult: { name: 'Vernichtungsrausch', desc: 'Ameisenkönig: rasende Klauen, Lebensraub und Regeneration', dur: 10, cd: 65, col: '200,40,70', kind: 'melee',
+      mod: { rate: 2.5, speed: 1.4, dmg: 1.4, leech: 1.5, regen: 8 } } },
   ana: { name: 'Ana', anime: 'Chiikawa World', tag: 'chi', hp: 112, speed: 258, cd: .55, weapon: 'Sushi', wdesc: 'Fernkampf: Nigiri, Maki und Sashimi, die durchschlagen',
-    perk: '+100% Fernkampfschaden, 50% Schadensminderung · +20% auf alle Werte · Phönix: steht einmal wieder auf und vernichtet alle Gegner im Umfeld', init(p) { p.rangedMul = 2; p.armor = .5; boost20(p); } },
+    perk: '+100% Fernkampfschaden, 50% Schadensminderung · +20% auf alle Werte · Phönix: steht einmal wieder auf und vernichtet alle Gegner im Umfeld', init(p) { p.rangedMul = 2; p.armor = .5; boost20(p); },
+    ult: { name: 'Porsche GT3', desc: 'Ein roter Porsche GT3 holt Ana ab: 20 Sekunden fahren, 60 % weniger Schaden, jede Sekunde Kontakt 300 % Schaden', dur: 20, cd: 90, col: '255,60,60', intro: .9,
+      mod: { car: true, speed: 1.5, take: .4 }, pulse: [{ every: .25, kind: 'contact', R: 54, dmg: .75 }] } },
   nam: { name: 'Nam', anime: 'Unlimited Studium', tag: 'uni', villain: true, hp: 448, speed: 126, cd: .22, weapon: 'Hantelwirbel', wdesc: 'Nahkampf: Hanteln, die um ihn kreisen',
-    perk: '-50% Lauftempo, +200% Leben, +100% Lebensregeneration · +20% auf alle Werte · Phönix: steht einmal wieder auf und vernichtet alle Gegner im Umfeld', init(p) { p.regenMul = 2; boost20(p); } },
+    perk: '-50% Lauftempo, +200% Leben, +100% Lebensregeneration · +20% auf alle Werte · Phönix: steht einmal wieder auf und vernichtet alle Gegner im Umfeld', init(p) { p.regenMul = 2; boost20(p); },
+    ult: { name: 'Liegestütz-Beben', desc: '10 Sekunden Liegestütze: bei jedem Bodenkontakt bebt der ganze Bildschirm mit 400 % Schaden', dur: 10, cd: 75, col: '200,150,90', kind: 'melee',
+      mod: { root: true, pushup: true }, pulse: [{ delay: 1, every: 1, count: 10, kind: 'screen', vfx: 'quake', dmg: 4, shake: .7, sfx: 'big' }] } },
 };
 const LOOK = {
   gojo: { id: 'gojo', skin: '#f6d9c4', shirt: '#1b2040', pants: '#1b2040', shoes: '#0b0d1a', hairStyle: 'spikeUp', hair: '#f5f7fa', noEyes: true },
@@ -480,7 +548,7 @@ function newGame(kind) {
   p = { kind, x: 0, y: 0, r: 14, hp: c.hp + 20, maxHp: c.hp + 20, speed: c.speed, face: 1, moving: false, animT: 0, atkT: 0, aim: 0, hurtT: 0, orb: 0, inv: 0, renT: 0, dashT: 0, dashCd: 0, mvx: 0, mvy: 0, buf: [0, 0, 0], rerolls: 5,
     level: 1, xp: 0, xpNext: 5, magnet: 75, dmgMul: 1, rate: 1, meleeMul: 1, rangedMul: 1, regenMul: 1, xpMul: 1, armor: 1, regen: .4, crit: 0, lvlDmg: 0, lvlHp: 0, pride: 0, area: 1, leech: 0, revives: 0,
     rangedImmune: false, wLvl: 1, wT: .5, ab: {}, abT: {}, up: {}, used: {} };
-  c.init(p); resetWorld(); runBalls = 0; newPet();
+  c.init(p); initUlt(); resetWorld(); runBalls = 0; newPet();
   enemies = []; shots = []; eshots = []; gems = []; fx = []; texts = []; timers = []; parts = []; chests = []; allies = [];
   t = 0; kills = 0; spawnT = 0; nextBoss = 150; pending = 0; shake = 0; chestT = 18; flash = 0;
   setState('play');
@@ -488,6 +556,7 @@ function newGame(kind) {
 let setReturn = 'main';
 function setState(s) {
   state = s; document.body.dataset.state = s; if (s !== 'play') joy = null;
+  if (s === 'pause') showPause();
   if (s === 'main' || s === 'pets') showPets();
   if (s === 'pklvl') showLv();
   for (const id of ['main', 'select', 'settings', 'lvl', 'pause', 'over', 'pets', 'pklvl', 'gacha']) $(id).classList.toggle('on', id === (s === 'levelup' ? 'lvl' : s));
@@ -534,7 +603,7 @@ function hit(e, amt, kind, kb, fx0, fy0) {
   }
   if (e.hp <= 0) {
     e.dead = true; kills++; if (e.mb) { tele = tele.filter(q => q.own !== e); laters = laters.filter(q => q.own !== e); }
-    if (e.prop) propBroken(e); else petKill();
+    if (e.prop) propBroken(e); else { petKill(); ultCharge(); }
     if (e.type === 'boss' && Math.random() < .5) gems.push({ x: e.x - 16, y: e.y + 12, ball: true, v: 0 });
     if (e.ev) bossDown(e);
     else if (p.arise && !e.prop && allies.length < 8 && Math.random() < p.arise) { allies.push({ x: e.x, y: e.y, life: 8, atkT: .3, face: 1, animT: 0, dmg: 8 + 2 * p.level, moving: false, pose: 0, shadow: true }); spark(e.x, e.y, 10, '#7a5aff', 160, .5, 5, { a: -1.57, spread: .6 }); }
@@ -547,7 +616,7 @@ function hit(e, amt, kind, kb, fx0, fy0) {
 }
 function area(x, y, R, dmg, kind, kb) { for (const e of enemies) if (Math.hypot(e.x - x, e.y - y) < R + e.r) hit(e, dmg, kind, kb, x, y); }
 function cone(a, R, half, dmg, kind, kb) { for (const e of enemies) { const d = Math.hypot(e.x - p.x, e.y - p.y); if (d < R + e.r && (d < 26 || angDiff(Math.atan2(e.y - p.y, e.x - p.x), a) < half)) hit(e, dmg, kind, kb); } }
-function hurtPlayer(d) { if (p.inv > 0 || p.armor <= 0) return; p.hp -= d * p.armor * (p.buf[0] > 0 ? .8 : 1); p.hurtT = .12; sfx('hurt'); }
+function hurtPlayer(d) { if (p.inv > 0 || p.armor <= 0) return; p.hp -= d * p.armor * p.ultTake * (p.buf[0] > 0 ? .8 : 1); p.hurtT = .12; sfx('hurt'); }
 function levelCheck() {
   while (p.xp >= p.xpNext) { p.xp -= p.xpNext; p.level++; p.xpNext = Math.floor(p.xpNext * 1.1 + 4); pending++; if (p.lvlHp) { p.maxHp += p.lvlHp; p.hp += p.lvlHp; } }
 }
@@ -824,6 +893,196 @@ function openChest(c) {
   spark(c.x, c.y - 10, 24, '#ffe45a', 300, .7, 5, { g: 300 }); spark(c.x, c.y - 10, 10, '#ffffff', 200, .5, 4);
 }
 
+// ================================================================ Ultimates (Leertaste oder Knopf)
+// Jede Ultimate steht als `ult` im Charakter-Eintrag. dur: Wirkdauer, cd: Aufladezeit (läuft erst nach dem Ende), intro: Anlaufzeit, kind: Schadensart
+// mod: speed/rate/dmg/area (Faktor), crit/regen/leech (Zuschlag), take (erlittener Schaden, 0 = unverwundbar), root, freeze, ghost, aura, pull, car, pushup
+// pulse: nova | screen | rain | volley | beam | clones | heal | contact; dmg ist ein Faktor auf den Basisschaden (ultBase)
+const ULT = { BASE_DMG: 14, PER_LEVEL: 4, KILL_SEC: .5, START_LEFT: .5, GHOST_EVERY: .035, GHOST_LIFE: .3, GHOST_MAX: 12, FLASH: .45, SHAKE: .5, MAX_ALLIES: 14, CLONE_LIFE: 8, CAR_FROM: 560, VIEW_PAD: 60, BIG_NOVA: 300 };
+const ULT_MUL = { speed: 'speed', rate: 'rate', dmg: 'dmgMul', area: 'area' }, ULT_ADD = { crit: 'crit', regen: 'regen', leech: 'leech' };
+let ufx = [];
+const ultOf = k => CHARS[k].ult;
+const ultBase = () => ULT.BASE_DMG + ULT.PER_LEVEL * (wl() - 1);
+const inView = (e, pad = ULT.VIEW_PAD) => Math.abs(e.x - p.x) < W / 2 + pad && Math.abs(e.y - p.y) < H / 2 / VK + pad;
+const ultRoot = () => p.ult.on && (!p.ult.began || !!(ultOf(p.kind).mod || {}).root);
+function initUlt() { p.ultTake = 1; p.ult = { on: false, began: false, t: 0, cd: ultOf(p.kind).cd * ULT.START_LEFT, nt: [], n: [], ghosts: [], gt: 0, aura: {} }; ufx = []; }
+function ultCharge() { const U = p.ult; if (U && !U.on) U.cd = Math.max(0, U.cd - ULT.KILL_SEC); }
+function tryUlt() {
+  if (state !== 'play' || !p || p.rev !== undefined) return;
+  const U = p.ult, C = ultOf(p.kind); if (U.on || U.cd > 0) return;
+  U.on = true; U.began = false; U.t = 0; U.gt = 0; U.nt = (C.pulse || []).map(q => q.delay === undefined ? q.every : q.delay); U.n = U.nt.map(() => 0);
+  flash = ULT.FLASH; shake = Math.max(shake, ULT.SHAKE); sfx('evo');
+  texts.push({ x: p.x, y: p.y - 56, v: C.name, life: 1.8, col: C.col, big: true });
+  spark(p.x, p.y, 30, `rgb(${C.col})`, 320, .6, 5);
+  if (!C.intro) beginUlt();
+}
+function beginUlt() {
+  const U = p.ult, M = ultOf(p.kind).mod || {}; U.began = true;
+  for (const k in ULT_MUL) if (M[k]) p[ULT_MUL[k]] *= M[k];
+  for (const k in ULT_ADD) if (M[k]) p[ULT_ADD[k]] += M[k];
+  if (M.take !== undefined) p.ultTake = M.take;
+  if (M.aura) { U.aura = { k: 'aura' + M.aura, was: p['aura' + M.aura] }; p[U.aura.k] = true; }
+}
+function endUlt() {
+  const U = p.ult, C = ultOf(p.kind), M = C.mod || {};
+  for (const k in ULT_MUL) if (M[k]) p[ULT_MUL[k]] /= M[k];
+  for (const k in ULT_ADD) if (M[k]) p[ULT_ADD[k]] -= M[k];
+  p.ultTake = 1; if (U.aura.k) p[U.aura.k] = U.aura.was; U.aura = {};
+  U.on = false; U.began = false; U.cd = C.cd; U.ghosts = [];
+}
+function tickUlt(dt) {
+  const U = p.ult, C = ultOf(p.kind), M = C.mod || {};
+  for (const f of ufx) f.life -= dt; ufx = ufx.filter(f => f.life > 0);
+  if (!U.on) { U.cd = Math.max(0, U.cd - dt); return; }
+  U.t += dt;
+  if (!U.began) { p.inv = Math.max(p.inv, .2); if (U.t < C.intro) return; beginUlt(); }
+  const T = U.t - (C.intro || 0);
+  if (M.take === 0) p.inv = Math.max(p.inv, .15);
+  if (M.freeze) for (const e of enemies) if (!e.ev && !e.dead && inView(e)) e.frozen = Math.max(e.frozen, .2);
+  if (M.pull) for (const e of enemies) { const dx = p.x - e.x, dy = p.y - e.y, d = Math.hypot(dx, dy); if (!e.ev && !e.dead && d > 30 && d < M.pull.R) { e.x += dx / d * M.pull.v * dt; e.y += dy / d * M.pull.v * dt; } }
+  if (M.ghost) { U.gt -= dt; if (U.gt <= 0) { U.gt = ULT.GHOST_EVERY; U.ghosts.push({ x: p.x, y: p.y, face: p.face, animT: p.animT, moving: p.moving, life: ULT.GHOST_LIFE }); if (U.ghosts.length > ULT.GHOST_MAX) U.ghosts.shift(); } }
+  for (const g of U.ghosts) g.life -= dt;
+  U.ghosts = U.ghosts.filter(g => g.life > 0);
+  if (parts.length < 500 && Math.random() < .5) spark(p.x + rand(-14, 14), p.y + rand(-4, 20), 1, `rgb(${C.col})`, 90, .5, 4, { a: -1.57, spread: .3, drag: 0 });
+  if (M.car && parts.length < 500 && p.moving) spark(p.x - p.face * 54, p.y + 14, 1, '#d8d8d8', 60, .4, 5, { a: p.face > 0 ? Math.PI : 0, spread: .3, drag: 1 });
+  (C.pulse || []).forEach((q, i) => {
+    while (T >= U.nt[i] && U.n[i] < (q.count || Infinity)) { U.n[i]++; U.nt[i] += q.every || 1e9; pulseUlt(q, C); }
+  });
+  if (T >= C.dur) endUlt();
+}
+function pulseUlt(q, C) {
+  const base = ultBase() * q.dmg, kind = C.kind || 'ranged', col = C.col, view = () => enemies.filter(e => !e.dead && inView(e));
+  if (q.shake) shake = Math.max(shake, q.shake);
+  if (q.sfx) sfx(q.sfx);
+  if (q.kind === 'nova' || q.kind === 'contact') {
+    const R = q.R * p.area; area(p.x, p.y, R, base, kind, q.kb || 0);
+    if (q.kind === 'nova') { boom(p.x, p.y, R, col, q.R >= ULT.BIG_NOVA); ufx.push({ k: 'ring', x: p.x, y: p.y, R, life: .45, max: .45, col }); }
+    if (q.vfx === 'pillar') ufx.push({ k: 'pillar', x: p.x, y: p.y, R, life: .7, max: .7, col });
+  } else if (q.kind === 'screen') {
+    for (const e of view()) {
+      hit(e, base, kind, 0);
+      if (q.vfx === 'slash' && ufx.length < 60) ufx.push({ k: 'slash', x: e.x, y: e.y, life: .22, max: .22, col });
+      else if (q.vfx === 'pillar' && ufx.length < 60) ufx.push({ k: 'pillar', x: e.x, y: e.y, R: 60, life: .7, max: .7, col });
+    }
+    if (q.vfx === 'quake') { ufx.push({ k: 'quake', x: p.x, y: p.y, seed: Math.floor(rand(0, 1e4)), life: .8, max: .8, col }); spark(p.x, p.y + 18, 14, '#c8b090', 260, .5, 5, { g: 400 }); }
+    if (q.vfx === 'ring') ufx.push({ k: 'ring', x: p.x, y: p.y, R: Math.hypot(W, H) * .6, life: .7, max: .7, col });
+  } else if (q.kind === 'rain') {
+    const es = view();
+    for (let i = 0; i < q.n; i++) {
+      const e = es.length ? pick(es) : null, x = e ? e.x : p.x + rand(-300, 300), y = e ? e.y : p.y + rand(-200, 200);
+      area(x, y, q.R, base, kind, 0); boom(x, y, q.R, col); ufx.push({ k: 'pillar', x, y, R: q.R, life: .5, max: .5, col });
+    }
+  } else if (q.kind === 'volley') {
+    const t0 = nearest(p.x, p.y, 800), a0 = t0 ? Math.atan2(t0.y - p.y, t0.x - p.x) : p.aim;
+    for (let i = 0; i < q.n; i++) {
+      const a = q.pat === 'ring' ? a0 + i * TAU / q.n : a0 + (q.n > 1 ? (i / (q.n - 1) - .5) * q.spread : 0) + rand(-.04, .04);
+      shot(q.shot.type, a, q.shot.speed, Object.assign({ dmg: base, kind }, q.shot.o));
+    }
+  } else if (q.kind === 'beam') {
+    const t0 = nearest(p.x, p.y, 900), a = t0 ? Math.atan2(t0.y - p.y, t0.x - p.x) : p.aim, ca = Math.cos(a), sa = Math.sin(a);
+    if (t0) p.face = t0.x >= p.x ? 1 : -1;
+    for (const e of enemies) {
+      const dx = e.x - p.x, dy = e.y - p.y, along = dx * ca + dy * sa, side = Math.abs(-dx * sa + dy * ca);
+      if (!e.dead && along > -20 && along < q.L && side < q.w / 2 + e.r) hit(e, base, kind, 160, p.x, p.y);
+    }
+    ufx.push({ k: 'beam', x: p.x, y: p.y - 8, a, L: q.L, w: q.w, life: .35, max: .35, col });
+  } else if (q.kind === 'clones') {
+    for (let i = 0; i < q.n && allies.length < ULT.MAX_ALLIES; i++) allies.push({ x: p.x + rand(-50, 50), y: p.y + rand(-50, 50), life: ULT.CLONE_LIFE, atkT: .3, face: 1, animT: 0, dmg: base, moving: false, pose: 0, shadow: !!q.shadow });
+    spark(p.x, p.y, 12, `rgb(${col})`, 180, .5, 4);
+  } else if (q.kind === 'heal') {
+    p.hp = Math.min(p.maxHp, p.hp + p.maxHp * q.frac); texts.push({ x: p.x, y: p.y - 40, v: '+' + Math.round(p.maxHp * q.frac), life: .9, col: '120,255,150', big: true });
+  }
+}
+function ultInfo() {
+  const U = p.ult, C = ultOf(p.kind), total = C.dur + (C.intro || 0);
+  if (U.on) { const left = Math.max(0, total - U.t); return { st: 'on', frac: left / total, txt: `Aktiv ${f1(left)} s`, short: Math.ceil(left) + ' s', col: '#ff7a3a' }; }
+  if (U.cd > 0) return { st: 'cd', frac: 1 - U.cd / C.cd, txt: `Lädt ${Math.ceil(U.cd)} s`, short: Math.ceil(U.cd) + ' s', col: '#6a7a9a' };
+  return { st: 'ready', frac: 1, txt: 'Bereit', short: 'Bereit', col: '#ffd23c' };
+}
+function drawCar(x, y, face) {
+  ctx.save(); ctx.translate(Math.round(x), Math.round(y + 24)); ctx.scale(face, UPS);
+  ctx.fillStyle = 'rgba(0,0,0,.3)'; ctx.beginPath(); ctx.ellipse(0, 0, 64, 10, 0, 0, TAU); ctx.fill();
+  const poly = (pts, fill, line) => { ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]); for (const q of pts.slice(1)) ctx.lineTo(q[0], q[1]); ctx.closePath(); ctx.fillStyle = fill; ctx.fill(); if (line) { ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.strokeStyle = INK; ctx.stroke(); } };
+  poly([[-60, -10], [-60, -26], [-52, -32], [-36, -34], [-20, -46], [6, -46], [28, -33], [52, -28], [60, -20], [60, -10]], '#d2202a', true);
+  poly([[-14, -43], [-24, -35], [20, -35], [6, -43]], '#9ad0f0', false);
+  poly([[-60, -26], [-52, -32], [-36, -34], [-30, -26]], '#a01820', false);
+  ctx.fillStyle = '#ff7a7a'; ctx.fillRect(-48, -29, 70, 2);
+  ctx.fillStyle = INK; ctx.fillRect(-62, -44, 26, 5); ctx.fillRect(-58, -40, 4, 12); ctx.fillRect(-44, -40, 4, 12);
+  ctx.fillStyle = '#e8e8f0'; ctx.fillRect(-62, -44, 26, 2);
+  ctx.fillStyle = '#ffe9a0'; ctx.fillRect(54, -24, 6, 5); ctx.fillStyle = '#ff3030'; ctx.fillRect(-60, -24, 3, 6);
+  for (const wx of [-36, 36]) { ctx.fillStyle = INK; ctx.beginPath(); ctx.arc(wx, -10, 12, 0, TAU); ctx.fill(); ctx.fillStyle = '#c8ccd8'; ctx.beginPath(); ctx.arc(wx, -10, 6, 0, TAU); ctx.fill(); ctx.fillStyle = '#6a6e7a'; ctx.beginPath(); ctx.arc(wx, -10, 2.5, 0, TAU); ctx.fill(); }
+  ctx.globalCompositeOperation = 'lighter'; glow(64, -22, 30, 'rgba(255,240,170,.5)', 'rgba(255,230,120,.2)', 'rgba(255,220,90,0)'); ctx.globalCompositeOperation = 'source-over';
+  ctx.restore();
+}
+function drawUltBody() {
+  const U = p.ult, C = ultOf(p.kind), M = C.mod || {};
+  for (const g of U.ghosts) { ctx.globalAlpha = g.life / ULT.GHOST_LIFE * .5; drawChar(ctx, LOOK[p.kind], g.x, g.y + 23, PS, g.face, g.animT, g.moving, false, 'n'); }
+  ctx.globalAlpha = 1;
+  if (M.car) {
+    if (U.began) { drawCar(p.x, p.y, p.face); return true; }
+    const k = Math.min(1, U.t / C.intro), hop = k > .5 ? Math.sin(Math.min(1, (k - .5) / .3) * Math.PI) * 44 : 0;
+    drawCar(p.x - ULT.CAR_FROM * (1 - k) ** 2, p.y, 1);
+    if (k < .8) { ctx.fillStyle = 'rgba(0,0,0,.26)'; ctx.beginPath(); ctx.ellipse(p.x, p.y + 23, 13, 9, 0, 0, TAU); ctx.fill(); drawChar(ctx, LOOK[p.kind], p.x, p.y + 23 - hop, PS, p.face, p.animT, false, false, 'n'); }
+    return true;
+  }
+  if (M.pushup && U.began) {
+    const low = .5 + .5 * Math.cos(TAU * (U.t - (C.intro || 0))), u = UPS;
+    ctx.fillStyle = 'rgba(0,0,0,.28)'; ctx.beginPath(); ctx.ellipse(p.x + p.face * 26, p.y + 24, 40, 8, 0, 0, TAU); ctx.fill();
+    ctx.save(); ctx.translate(Math.round(p.x), Math.round(p.y + 23)); ctx.scale(p.face, UPS); ctx.rotate(1.2 + .3 * low);
+    UPS = 1; drawChar(ctx, LOOK[p.kind], 0, 0, PS, 1, p.animT, false, false, 'n'); UPS = u; ctx.restore();
+    return true;
+  }
+  return false;
+}
+function drawUlt() {
+  for (const f of ufx) {
+    const k = 1 - f.life / f.max, a = 1 - k;
+    ctx.save(); ctx.globalAlpha = Math.max(0, a);
+    if (f.k === 'ring') { ctx.strokeStyle = `rgb(${f.col})`; ctx.lineWidth = 3 + 7 * a; ctx.beginPath(); ctx.arc(f.x, f.y, Math.max(1, f.R * Math.min(1, k * 1.6)), 0, TAU); ctx.stroke(); }
+    else if (f.k === 'quake') {
+      for (let i = 0; i < 16; i++) {
+        const ang = hash(i, f.seed) / 4294967295 * TAU, len = (260 + hash(i, f.seed + 1) % 520) * Math.min(1, k * 2.2);
+        ctx.beginPath(); ctx.moveTo(f.x, f.y + 20);
+        for (let s = 1; s <= 7; s++) { const d = len * s / 7, o = ((hash(i * 9 + s, f.seed) % 1000) / 1000 - .5) * 46; ctx.lineTo(f.x + Math.cos(ang) * d - Math.sin(ang) * o, f.y + 20 + Math.sin(ang) * d + Math.cos(ang) * o); }
+        ctx.strokeStyle = 'rgba(30,20,12,.9)'; ctx.lineWidth = 6; ctx.stroke(); ctx.strokeStyle = `rgba(${f.col},.8)`; ctx.lineWidth = 2; ctx.stroke();
+      }
+    } else if (f.k === 'slash') { bolt(f.x - 28, f.y - 34, f.x + 28, f.y + 8, f.col, 2.5, 4); bolt(f.x + 26, f.y - 30, f.x - 26, f.y + 10, f.col, 2, 4); }
+    else if (f.k === 'pillar') {
+      ctx.translate(f.x, f.y); ctx.scale(1, UPS); ctx.globalCompositeOperation = 'lighter';
+      const w = Math.max(24, f.R * .45) * (1 - k * .5), g = ctx.createLinearGradient(0, -560, 0, 0); g.addColorStop(0, `rgba(${f.col},0)`); g.addColorStop(1, `rgba(${f.col},.85)`);
+      ctx.fillStyle = g; ctx.fillRect(-w / 2, -560, w, 560); ctx.fillStyle = 'rgba(255,255,255,.6)'; ctx.fillRect(-w / 6, -560, w / 3, 560);
+    } else if (f.k === 'beam') {
+      ctx.translate(f.x, f.y); ctx.rotate(f.a); ctx.globalCompositeOperation = 'lighter';
+      const w = f.w * (1 - k * .6); ctx.fillStyle = `rgba(${f.col},.55)`; ctx.fillRect(0, -w / 2, f.L, w); ctx.fillStyle = 'rgba(255,255,255,.8)'; ctx.fillRect(0, -w / 5, f.L, w * .4);
+    }
+    ctx.restore();
+  }
+}
+
+// ================================================================ Pause: Übersicht über Ausrüstung und Werte
+const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+const sgn = n => (n > 0 ? '+' : '') + n + ' %';
+const pItem = (tag, name, lv, info) => `<div class="pi"><span class="ico tag ${tag}">${esc(name[0])}</span><div><span class="nm">${esc(name)}</span><span class="lv">${esc(lv)}</span><p>${esc(info)}</p></div></div>`;
+const pStat = (label, val) => `<div class="ps"><span>${label}</span><b>${val}</b></div>`;
+function showPause() {
+  const C = CHARS[p.kind], weapons = [pItem(C.tag, C.weapon, p.wLvl >= 5 ? 'Lv. 5 / 5 MAX' : `Lv. ${p.wLvl} / 5`, WINFO(p.kind, p.wLvl) || C.wdesc)];
+  for (const id in p.ab) { const a = AB[id]; weapons.push(pItem(a.tag, a.name, a.evo ? 'Kombination' : `Lv. ${p.ab[id]} / ${a.max}`, a.evo ? a.desc : INFO[id] ? INFO[id](p.ab[id]) : a.desc)); }
+  const passives = Object.keys(p.up).map(id => pItem('gen', STATS[id].name, `Lv. ${p.up[id]} / ${STATS[id].max}`, STATS[id].desc));
+  $('pItems').innerHTML = `<h4>Waffen</h4>${weapons.join('')}<h4>Passive Items</h4>${passives.join('') || '<p class="key">Noch keine</p>'}`;
+  const dmg = p.dmgMul * (1 + p.lvlDmg * (p.level - 1)) * (p.buf[2] > 0 ? 1.2 : 1), rate = p.rate * (p.buf[1] > 0 ? 1.2 : 1), taken = p.armor * p.ultTake * (p.buf[0] > 0 ? .8 : 1);
+  const S = [['Level', p.level], ['Leben', `${Math.ceil(p.hp)} / ${p.maxHp}`], ['Regeneration', `${f1(p.regen * p.regenMul)} / s`], ['Lauftempo', Math.round(p.speed)],
+    ['Schaden', sgn(pc(dmg))], ['Angriffstempo', sgn(pc(rate))], ['Flächengröße', sgn(pc(p.area))], ['Krit-Chance', `${Math.round(p.crit * 100)} %`],
+    ['Erlittener Schaden', sgn(pc(taken))], ['Sammelradius', Math.round(p.magnet)], ['EXP', sgn(pc(p.xpMul))]];
+  if (p.meleeMul !== 1) S.push(['Nahkampfschaden', sgn(pc(p.meleeMul))]);
+  if (p.rangedMul !== 1) S.push(['Fernkampfschaden', sgn(pc(p.rangedMul))]);
+  if (p.pride) S.push(['Stolz', `bis ${sgn(Math.round(p.pride * 100))} bei wenig Leben`]);
+  if (p.leech) S.push(['Leben pro Besiegtem', f1(p.leech)]);
+  if (p.revives) S.push(['Wiederbelebungen', p.revives]);
+  if (pet) S.push(['Begleiter', `${pet.form.name} Lv. ${pet.sv.l}`]);
+  const ui = ultInfo(); S.push(['Ultimate', `${ultOf(p.kind).name} · ${ui.txt}`]);
+  for (let k = 0; k < 3; k++) if (p.buf[k] > 0) S.push([ORBS[k].name, `${Math.ceil(p.buf[k])} s`]);
+  $('pStats').innerHTML = S.map(r => pStat(r[0], r[1])).join('');
+}
+
 // ================================================================ Eingabe
 const keys = {};
 let joy = null;
@@ -831,6 +1090,7 @@ addEventListener('keydown', e => {
   initAudio();
   const k = e.key.toLowerCase(); keys[k] = true;
   if (k === 'shift' && !e.repeat) tryDash();
+  if (k === ' ' && !e.repeat) tryUlt();
   if (state === 'levelup' && '123'.includes(k)) choose(+k - 1);
   else if (state === 'levelup' && k === 'r' && !e.repeat) reroll();
   else if (k === 'p' || k === 'escape') {
@@ -839,7 +1099,7 @@ addEventListener('keydown', e => {
   }
   if (k.startsWith('arrow') || k === ' ') e.preventDefault();
 });
-addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; });
+addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; if (e.key === ' ') e.preventDefault(); });
 addEventListener('blur', () => { for (const k in keys) keys[k] = false; });
 addEventListener('pointerdown', initAudio);
 cv.addEventListener('pointerdown', e => { if (!joy) joy = { id: e.pointerId, x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY }; });
@@ -847,6 +1107,7 @@ addEventListener('pointermove', e => { if (joy && e.pointerId === joy.id) { joy.
 addEventListener('pointerup', e => { if (joy && e.pointerId === joy.id) joy = null; });
 addEventListener('pointercancel', e => { if (joy && e.pointerId === joy.id) joy = null; });
 $('bDash').addEventListener('pointerdown', e => { e.preventDefault(); initAudio(); tryDash(); });
+$('bUlt').addEventListener('pointerdown', e => { e.preventDefault(); initAudio(); tryUlt(); e.currentTarget.blur(); });
 $('bPause').addEventListener('pointerdown', e => { e.preventDefault(); initAudio(); if (state === 'play') { sfx('click'); joy = null; setState('pause'); } });
 addEventListener('contextmenu', e => e.preventDefault());
 
@@ -872,7 +1133,7 @@ function update(dt) {
   let mx = (keys.d || keys.arrowright ? 1 : 0) - (keys.a || keys.arrowleft ? 1 : 0);
   let my = (keys.s || keys.arrowdown ? 1 : 0) - (keys.w || keys.arrowup ? 1 : 0);
   if (joy) { const jx = joy.x - joy.x0, jy = joy.y - joy.y0; if (Math.hypot(jx, jy) > 12) { mx = jx; my = jy; } }
-  if (p.rev !== undefined) mx = my = 0;
+  if (p.rev !== undefined || ultRoot()) mx = my = 0;
   const ml = Math.hypot(mx, my);
   p.moving = ml > 0; p.mvx = p.moving ? mx / ml : 0; p.mvy = p.moving ? my / ml : 0;
   if (p.dashT > 0) { p.dashT -= dt; p.x += p.dvx * dt; p.y += p.dvy * dt; if (parts.length < 600) spark(p.x, p.y - 4, 2, '#cfe8ff', 50, .25, 6); }
@@ -883,6 +1144,7 @@ function update(dt) {
   }
   p.animT += dt; p.atkT -= dt; p.hurtT -= dt; p.inv -= dt; shake = Math.max(0, shake - dt); flash = Math.max(0, flash - dt); p.orb += dt * 2.6;
   p.hp = Math.min(p.maxHp, p.hp + p.regen * p.regenMul * dt);
+  tickUlt(dt);
 
   tickWorld(dt);
   if (!room) spawnT -= dt;
@@ -1374,6 +1636,7 @@ function render() {
     }
     if (rb) ctx.restore();
   }
+  drawUlt();
   drawTopFx();
   // helle Partikel
   ctx.globalCompositeOperation = 'lighter';
@@ -1413,12 +1676,14 @@ function render() {
   drawHud(); drawOverlay();
 }
 function drawPlayer() {
+  if (p.ult.on && drawUltBody()) return;
   ctx.fillStyle = 'rgba(0,0,0,.26)'; ctx.beginPath(); ctx.ellipse(p.x, p.y + 23, 13, 9, 0, 0, TAU); ctx.fill();
   if (p.rev === undefined) castShadow(LOOK[p.kind], p.x, p.y + 23, PS, p.face, p.animT, p.moving);
   ctx.globalCompositeOperation = 'lighter';
   if (p.auraBankai) glow(p.x, p.y - 8, 50, 'rgba(255,60,60,.35)', 'rgba(200,20,30,.3)', 'rgba(0,0,0,0)');
   if (p.auraSSJ) { glow(p.x, p.y - 8, 56, 'rgba(255,240,150,.4)', `rgba(255,220,60,${.32 + .12 * Math.sin(t * 14)})`, 'rgba(255,200,0,0)'); if (parts.length < 600 && Math.random() < .3) spark(p.x + rand(-16, 16), p.y + 16, 1, '#ffe45a', 90, .5, 4, { a: -1.57, spread: .2, drag: 0 }); }
   if (p.auraGod && Math.random() < .3) bolt(p.x + rand(-18, 18), p.y + rand(-30, 20), p.x + rand(-26, 26), p.y + rand(-34, 22), '120,200,255', 1.5, 6);
+  if (p.ult.on && p.ult.began) { const c = ultOf(p.kind).col; glow(p.x, p.y - 8, 54, `rgba(${c},.32)`, `rgba(${c},.16)`, `rgba(${c},0)`); }
   if (p.kind === 'gojo') { ctx.strokeStyle = `rgba(120,220,255,${.3 + .12 * Math.sin(t * 4)})`; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(p.x, p.y - 6, 40, 0, TAU); ctx.stroke(); }
   ctx.globalCompositeOperation = 'source-over';
   if (p.inv > 0 && Math.floor(t * 16) % 2) ctx.globalAlpha = .45;
@@ -1448,14 +1713,18 @@ function txt(s, x, y, size, align, col) {
   ctx.font = `700 ${size}px ${FONT}`; ctx.textAlign = align || 'left';
   ctx.fillStyle = INK; ctx.fillText(s, x + 2, y + 2); ctx.fillStyle = col || '#fff'; ctx.fillText(s, x, y);
 }
+const COARSE = matchMedia('(pointer:coarse)').matches;
 function drawHud() {
   const w0 = W, h0 = H; ctx.save(); ctx.scale(1 / Z, 1 / Z); W = Math.round(W * Z); H = Math.round(H * Z); // HUD in Originalgröße
   bar(3, 3, W - 6, 10, p.xp / p.xpNext, '#59c8ff');
   bar(18, 30, Math.min(210, Math.round(W * .33)), 16, p.hp / p.maxHp, '#e03a3a');
   txt(`${Math.ceil(p.hp)} / ${p.maxHp}`, 24, 44, 14);
   bar(18, 53, Math.min(210, Math.round(W * .33)), 4, 1 - Math.max(0, p.dashCd) / 2.5, p.dashCd > 0 ? '#6a7a9a' : '#7fe0ff');
-  txt(`${CHARS[p.kind].name} · Lv ${p.level}`, 16, 72, 18);
-  let y = 94; txt(`${CHARS[p.kind].weapon} ${p.wLvl >= 5 ? 'MAX' : p.wLvl}`, 16, y, 14, 'left', '#ffd23c'); y += 18;
+  const ui = ultInfo(), bw = Math.min(210, Math.round(W * .33));
+  bar(18, 66, bw, 8, ui.frac, ui.col);
+  txt(`${CHARS[p.kind].ult.name} · ${ui.txt}${ui.st === 'ready' && !COARSE ? ' (Leertaste)' : ''}`, 18, 92, 13, 'left', ui.st === 'ready' ? '#ffd23c' : '#e8e0ff');
+  txt(`${CHARS[p.kind].name} · Lv ${p.level}`, 16, 114, 18);
+  let y = 136; txt(`${CHARS[p.kind].weapon} ${p.wLvl >= 5 ? 'MAX' : p.wLvl}`, 16, y, 14, 'left', '#ffd23c'); y += 18;
   for (const id in p.ab) { txt(AB[id].evo ? `★ ${AB[id].name}` : `${AB[id].name} ${p.ab[id] >= 5 ? 'MAX' : p.ab[id]}`, 16, y, 14, 'left', AB[id].evo ? '#ffd23c' : '#e8e0ff'); y += 18; }
   txt(fmt(t), W / 2, 48, 30, 'center');
   txt(`Besiegt: ${kills}`, W - 16, 44, 18, 'right');
@@ -1666,6 +1935,10 @@ const BOSSLOOK = {
   madara: { id: 'madara', skin: '#f0d6c0', shirt: '#1c2038', pants: '#1c2038', shoes: '#16161c', glove: '#16161c', hairStyle: 'madara', hair: '#16161c', eye: '#d02030', scowl: true },
 };
 BOSSLOOK.koku = { id: 'koku', skin: '#f0dcd0', shirt: '#5a3a8a', pants: '#18161e', shoes: '#f0ece0', hairStyle: 'koku', hair: '#2a1216', noEyes: true, sword: true };
+BOSSLOOK.griffith = { id: 'griffith', skin: '#f4e2d6', shirt: '#e8ecf4', pants: '#d8dce8', shoes: '#b8bcc8', boots: true, glove: '#c8ccd8', cape: '#f4f4f8', hairStyle: 'griffith', hair: '#e6e8f2', eye: '#3a6ad0', sword: true };
+BOSSLOOK.aizen = { id: 'aizen', skin: '#f2d2b4', shirt: '#f2f0ea', pants: '#f2f0ea', shoes: '#1a1a22', cape: '#f2f0ea', hairStyle: 'short', hair: '#5a3a22', eye: '#5a3210', sword: true };
+BOSSLOOK.makima = { id: 'makima', skin: '#f6dccb', shirt: '#f4f4f4', pants: '#1a1a22', shoes: '#1a1a22', hairStyle: 'makima', hair: '#c8524a', eye: '#e8b020' };
+BOSSLOOK.meruem = { id: 'meruem', skin: '#cfe6c8', shirt: '#cfe6c8', pants: '#3f7a6a', shoes: '#2f5a4e', bare: true, wrist: '#3f7a6a', hairStyle: 'meruem', hair: '#3f8a78', eye: '#b03a8a', scowl: true };
 const ringOf = (n, R, deco, a0 = 0, skip) => { const o = []; for (let i = 0; i < n; i++) { const a = a0 + i * TAU / n; if (skip && skip(a)) continue; o.push({ deco, x: Math.cos(a) * R, y: Math.sin(a) * R }); } return o; };
 const AR = 560;
 const ARENAS = {
@@ -1692,6 +1965,37 @@ ARENAS.koku = { void: '#0a0608', rim: '#3a2418', rim2: '#a070ff',
     ctx.strokeStyle = 'rgba(170,120,255,.3)'; ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(0, 0, R - 110, 0, TAU); ctx.stroke(); },
   deco: ringOf(12, AR - 55, S(16, 46, r => { r(4, 4, 8, 40, '#7a2a20'); r(2, 1, 12, 4, '#3a2418'); r(2, 42, 12, 3, '#3a2418'); r(6, 4, 2, 38, '#a04030'); r(10, 4, 2, 38, '#4a1810'); }), TAU / 24)
     .concat(ringOf(6, AR - 95, S(30, 40, r => { r(1, 1, 28, 38, '#3a2418'); for (let i = 0; i < 3; i++) for (let j = 0; j < 4; j++) r(3 + i * 9, 3 + j * 9, 7, 7, '#f0e6c8'); r(3, 30, 25, 7, '#c8b890'); }, true), .5)) };
+// Berserk – Sonnenfinsternis: blutroter Boden, schwarze Sonne mit Korona, Felsdornen und ein Ei-Amulett auf dem Altar
+ARENAS.griffith = { void: '#0a0204', rim: '#3a0c12', rim2: '#ff3040',
+  ground: mkGround('#4a1218', ['#40101a', '#561820'], (px, rnd) => { for (let i = 0; i < 9; i++) { let x = rnd() * GT | 0, y = rnd() * GT | 0; for (let k = 0; k < 10; k++) { px(x, y, '#2a0810'); x += rnd() < .6 ? 1 : 0; y += rnd() < .5 ? 1 : -1; } } for (let i = 0; i < 8; i++) px(rnd() * GT | 0, rnd() * GT | 0, '#7a2430', 2, 1); }),
+  floor() { ctx.fillStyle = 'rgba(255,60,50,.16)'; ctx.beginPath(); ctx.arc(0, 0, 250, 0, TAU); ctx.fill(); ctx.fillStyle = 'rgba(255,130,90,.22)'; ctx.beginPath(); ctx.arc(0, 0, 205, 0, TAU); ctx.fill();
+    ctx.fillStyle = 'rgba(6,2,4,.82)'; ctx.beginPath(); ctx.arc(0, 0, 180, 0, TAU); ctx.fill();
+    ctx.strokeStyle = 'rgba(255,70,60,.28)'; ctx.lineWidth = 5; for (let i = 0; i < 16; i++) { const a = i * TAU / 16, d = i % 2 ? 330 : 410; ctx.beginPath(); ctx.moveTo(Math.cos(a) * 262, Math.sin(a) * 262); ctx.lineTo(Math.cos(a) * d, Math.sin(a) * d); ctx.stroke(); } },
+  deco: ringOf(14, AR - 50, S(14, 46, r => { r(6, 2, 2, 8, '#2a0a10'); r(5, 8, 5, 36, '#2a0a10'); r(3, 20, 9, 24, '#3a0e16'); r(1, 34, 12, 10, '#4a141c'); r(6, 12, 1, 28, '#6a1c28'); }), TAU / 28, a => Math.sin(a) < -.95)
+    .concat([{ x: 0, y: -AR + 120, deco: S(22, 34, (r, g) => { r(4, 22, 14, 9, '#2a0a10'); r(2, 30, 18, 4, '#1a0608'); disc(g, 11, 12, 7, 10, '#c02030'); r(7, 5, 2, 3, '#f06070'); r(8, 9, 2, 1, '#f0e0d0'); r(13, 12, 2, 1, '#f0e0d0'); r(9, 16, 4, 1, '#5a0810'); r(11, 13, 1, 2, '#8a1420'); }, true) }]) };
+// Bleach – Las Noches: heller Steinboden, Mondsichel, weiße Säulen und der hohe Thron
+ARENAS.aizen = { void: '#07080e', rim: '#d8d8e0', rim2: '#b070ff',
+  ground: mkGround('#7c7e8e', ['#747686', '#868898'], px => { for (let i = 0; i < GT; i++) { px(i, 0, '#5c5e6e'); px(0, i, '#5c5e6e'); px(i, 1, '#9698a8'); px(1, i, '#9698a8'); } }),
+  floor(R) { ctx.fillStyle = 'rgba(240,240,250,.22)'; ctx.fillRect(-60, -R, 120, R - 215);
+    ctx.fillStyle = 'rgba(240,240,255,.3)'; ctx.beginPath(); ctx.arc(0, 0, 210, 0, TAU); ctx.arc(25, -10, 180, 0, TAU, true); ctx.fill();
+    ctx.strokeStyle = 'rgba(180,120,255,.3)'; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(0, 0, 222, 0, TAU); ctx.stroke(); },
+  deco: ringOf(12, AR - 55, S(16, 48, r => { r(3, 4, 10, 40, '#e4e4ec'); r(1, 0, 14, 5, '#f4f4fa'); r(1, 43, 14, 4, '#c4c4d0'); r(10, 4, 3, 40, '#b4b4c4'); r(5, 5, 1, 38, '#ffffff'); }), TAU / 24, a => Math.sin(a) < -.9)
+    .concat([{ x: 0, y: -AR + 125, deco: S(34, 52, r => { r(5, 0, 24, 42, '#dcdce6'); r(9, 4, 16, 24, '#c0c0d0'); r(5, 0, 3, 42, '#f4f4fa'); r(26, 0, 3, 42, '#b4b4c4'); r(9, 28, 16, 8, '#f4f4fa'); r(2, 40, 30, 5, '#ececf4'); r(0, 45, 34, 6, '#d0d0dc'); r(15, 9, 4, 4, '#b070ff'); r(16, 10, 1, 1, '#ffffff'); }) }]) };
+// Chainsaw Man – Friedhof: Gras, Kieswege und Reihen weißer Grabkreuze
+ARENAS.makima = { void: '#0c1210', rim: '#4a5248', rim2: '#ff5a78',
+  ground: mkGround('#5c7a52', ['#54724a', '#66845a'], (px, rnd) => { for (let i = 0; i < 26; i++) { const x = rnd() * GT | 0, y = rnd() * GT | 0; px(x, y, '#3e5a38', 1, 2); px(x + 1, y + 1, '#7a9a68'); } }),
+  floor(R) { ctx.fillStyle = 'rgba(205,200,184,.3)'; ctx.fillRect(-36, -R, 72, 2 * R); ctx.fillRect(-R, -36, 2 * R, 72);
+    ctx.strokeStyle = 'rgba(255,90,120,.32)'; ctx.lineWidth = 6; ctx.setLineDash([18, 10]); ctx.beginPath(); ctx.arc(0, 0, 240, 0, TAU); ctx.stroke(); ctx.setLineDash([]); },
+  deco: ringOf(16, AR - 50, S(14, 26, r => { r(5, 0, 4, 25, '#e8e6dc'); r(0, 6, 14, 4, '#e8e6dc'); r(8, 0, 1, 25, '#b8b6ac'); r(0, 9, 14, 1, '#b8b6ac'); r(3, 24, 8, 2, '#3e5a38'); }), TAU / 32)
+    .concat(ringOf(11, AR - 105, S(12, 22, r => { r(4, 0, 4, 21, '#d8d6cc'); r(0, 5, 12, 4, '#d8d6cc'); r(7, 0, 1, 21, '#a8a69c'); r(2, 20, 8, 2, '#3e5a38'); }), .25)) };
+// Hunter x Hunter – Königspalast: dunkle Fliesen, Goldsäulen, Thron und ein großes Gungi-Brett in der Mitte
+ARENAS.meruem = { void: '#080a0c', rim: '#8a6a2a', rim2: '#ffe050',
+  ground: mkGround('#2c4a48', ['#284442', '#325250'], px => { for (let i = 0; i < GT; i++) for (const o of [0, 32]) { px(i, o, '#1c3230'); px(o, i, '#1c3230'); } px(15, 15, '#c8a040', 2, 2); px(47, 47, '#c8a040', 2, 2); }),
+  floor() { const s = 44, n = 9, h = s * n / 2; ctx.fillStyle = '#c8a040'; ctx.fillRect(-h - 12, -h - 12, 2 * h + 24, 2 * h + 24); ctx.fillStyle = '#2a1c0e'; ctx.fillRect(-h - 8, -h - 8, 2 * h + 16, 2 * h + 16); ctx.fillStyle = '#4a3520'; ctx.fillRect(-h, -h, 2 * h, 2 * h);
+    ctx.fillStyle = 'rgba(255,220,150,.08)'; for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) if ((i + j) & 1) ctx.fillRect(-h + i * s, -h + j * s, s, s);
+    ctx.fillStyle = 'rgba(230,190,110,.45)'; for (let i = 0; i <= n; i++) { ctx.fillRect(-h + i * s - 1, -h, 2, 2 * h); ctx.fillRect(-h, -h + i * s - 1, 2 * h, 2); } },
+  deco: ringOf(12, AR - 55, S(16, 46, r => { r(3, 5, 10, 36, '#3a5a56'); r(1, 1, 14, 5, '#c8a040'); r(1, 40, 14, 5, '#a8842c'); r(5, 6, 2, 34, '#4e726c'); r(10, 6, 3, 34, '#284442'); r(1, 1, 14, 1, '#f0d070'); }), TAU / 24, a => Math.sin(a) < -.9)
+    .concat([{ x: 0, y: -AR + 120, deco: S(30, 44, r => { r(6, 2, 18, 30, '#1c3230'); r(8, 4, 14, 26, '#3f7a6a'); r(4, 0, 4, 34, '#c8a040'); r(22, 0, 4, 34, '#c8a040'); r(2, 26, 26, 10, '#a8842c'); r(6, 24, 18, 6, '#58a08c'); r(2, 36, 26, 6, '#8a6a2a'); r(13, 6, 4, 4, '#f0d070'); }) }]) };
 function drawArena(cx, cy, deco) {
   const A = room.B.ar, R = room.R, ox = -Math.round(cx), oy = -Math.round(cy / 3) * 3;
   ctx.fillStyle = A.void; ctx.fillRect(0, 0, W, H / VK + 2);
@@ -1775,9 +2079,46 @@ const BOSSES = [
     (b, r) => { shout(b, 'Vierzehnte Form: Sichelmond-Katastrophe'); for (let i = 0; i < (r ? 18 : 13); i++) { const a = rand(0, TAU), d = Math.sqrt(Math.random()) * 420; T('circle', 1.6 + i * .02, { x: p.x + Math.cos(a) * d, y: p.y + Math.sin(a) * d, R: 92, snd: 'slash', vis: 'moon' }); } return 2; },
   ] },
 ];
+const stay = (x, y, m) => { const d = Math.hypot(x, y); return d > m ? [x * m / d, y * m / d] : [x, y]; }; // Punkt in den Bossraum zurückholen
+BOSSES.push(
+  { id: 'griffith', name: 'Griffith', title: 'Falke des Lichts', anime: 'Berserk', arena: 'Sonnenfinsternis', col: '255,70,80', sp: 125, ar: ARENAS.griffith, atk: [
+    (b, r) => { shout(b, 'Falkenstoß'); return dashes(b, r ? 5 : 3, .9, .38, 58, 'cut'); },
+    // vorn und hinten schlagen die Schwingen ein, seitlich ist man sicher – in Rage danach umgekehrt
+    (b, r) => { shout(b, 'Schwingen der Finsternis'); const a = aimP(b), x = b.x, y = b.y, w = (da, half, d) => T('cone', d, { x, y, a: a + da, R: 470, half, snd: 'slash', vis: 'slash' }); w(0, .95, 1.5); w(Math.PI, .95, 1.5); if (r) later(.9, () => { w(Math.PI / 2, .7, 1.2); w(-Math.PI / 2, .7, 1.2); }); return r ? 2.1 : 1.5; },
+    // Druckwelle läuft Ring für Ring nach außen
+    (b, r) => { shout(b, 'Raumkrümmung'); const x = b.x, y = b.y, n = r ? 4 : 3; for (let i = 0; i < n; i++) later(i * .5, () => T(i ? 'ring' : 'circle', 1.2, { x, y, R0: i * 150, R: (i + 1) * 150 })); return 1.2 + (n - 1) * .5; },
+    (b, r) => { shout(b, 'Mal des Opfers'); const n = r ? 6 : 4; for (let i = 0; i < n; i++) later(i * .4, () => T('circle', .9, { x: p.x, y: p.y, R: 105, snd: 'zap' })); return .9 + (n - 1) * .4; },
+    (b, r) => { shout(b, 'Sonnenfinsternis'); T('circle', 2, { x: 0, y: 0, R: 230, big: true, dmg: room.dmg * 1.5, snd: 'big' }); scatter(r ? 12 : 8, 85, 380, 1.3); return 2.2; },
+  ] },
+  { id: 'aizen', name: 'Sosuke Aizen', title: 'Herr von Las Noches', anime: 'Bleach', arena: 'Las Noches', col: '200,120,255', sp: 100, ar: ARENAS.aizen, atk: [
+    // Illusion: er verschwindet und taucht an anderer Stelle neben dem Spieler wieder auf
+    (b, r) => { shout(b, 'Kyoka Suigetsu'); const n = r ? 3 : 2; for (let i = 0; i < n; i++) later(i * 1.15, () => { if (b.dead || !room) return; const a = rand(0, TAU), [x, y] = stay(p.x + Math.cos(a) * 150, p.y + Math.sin(a) * 150, room.R - 70); spark(b.x, b.y, 14, '#e0c8ff', 260, .5, 5); b.x = x; b.y = y; spark(x, y, 14, '#e0c8ff', 260, .5, 5); sfx('zap'); T('cone', .95, { x, y, a: Math.atan2(p.y - y, p.x - x), R: 330, half: .8, snd: 'slash', vis: 'slash' }); }); return .95 + (n - 1) * 1.15; },
+    // Sarg schließt sich, danach schießen Speere in vier (Rage: acht) Richtungen heraus
+    (b, r) => { shout(b, 'Hado 90: Kurohitsugi'); const x = p.x, y = p.y, a0 = rand(0, TAU), n = r ? 8 : 4; T('circle', 1.8, { x, y, R: 230, big: true, dmg: room.dmg * 1.5, snd: 'big', onFire() { for (let i = 0; i < n; i++) T('line', 1, { x, y, a: a0 + i * TAU / n, L: 700, w: 52, snd: 'slash', vis: 'cut' }); } }); return 2.8; },
+    (b, r) => { shout(b, 'Hado 63: Raikoho'); const f = () => { if (!b.dead) T('line', 1.3, { x: b.x, y: b.y, a: aimP(b), L: 1200, w: 140, col: '255,230,90', snd: 'zap', vis: 'beam' }); }; f(); if (r) later(.8, f); return r ? 2.1 : 1.3; },
+    (b, r) => { shout(b, 'Hado 99: Goryu Tenmetsu'); const a0 = rand(0, TAU), n = r ? 3 : 2; for (let i = 0; i < n; i++) later(i * .7, () => radial(b, 5, a0 + i * TAU / 10, 1.3, { w: 70, vis: 'beam' })); return 1.3 + (n - 1) * .7; },
+    (b, r) => { shout(b, 'Fragor'); const n = r ? 4 : 3; for (let i = 0; i < n; i++) later(i * .55, () => T('circle', 1.1, { x: p.x, y: p.y, R: 110 + i * 35 })); return 1.1 + (n - 1) * .55; },
+  ] },
+  { id: 'makima', name: 'Makima', title: 'Kontrollteufel', anime: 'Chainsaw Man', arena: 'Friedhof', col: '255,90,120', sp: 85, ar: ARENAS.makima, atk: [
+    (b, r) => { shout(b, 'Bang.'); const n = r ? 5 : 3; for (let i = 0; i < n; i++) later(i * .5, () => { if (!b.dead) T('line', .8, { x: b.x, y: b.y, a: aimP(b), L: 1100, w: 54, snd: 'shoot', vis: 'bolt' }); }); return .8 + (n - 1) * .5; },
+    // nur direkt bei ihr ist man sicher – in Rage muss man danach sofort wieder weg
+    (b, r) => { shout(b, 'Gehorche.'); const x = b.x, y = b.y; T('ring', 2, { x, y, R0: 190, R: 1300, big: true, snd: 'big' }); if (r) later(1.3, () => T('circle', 1.6, { x, y, R: 190 })); return r ? 2.9 : 2; },
+    (b, r) => { shout(b, 'Ketten der Kontrolle'); const n = r ? 7 : 5, a0 = rand(0, TAU); for (let i = 0; i < n; i++) { const a = a0 + i * TAU / n, x = Math.cos(a) * room.R, y = Math.sin(a) * room.R; T('line', 1.4 + i * .06, { x, y, a: Math.atan2(p.y - y, p.x - x), L: 1200, w: 38, col: '215,215,230', snd: 'slash', vis: 'string' }); } return 1.4 + n * .06; },
+    (b, r) => { shout(b, 'Tausend Speere'); return scatter(r ? 16 : 11, 78, 400, 1.3, { snd: 'slash' }); },
+    (b, r) => { shout(b, 'Zerquetschen'); const n = r ? 3 : 2; for (let i = 0; i < n; i++) later(i * .9, () => T('circle', 1.4, { x: p.x, y: p.y, R: 200, big: true, dmg: room.dmg * 1.4, snd: 'big' })); return 1.4 + (n - 1) * .9; },
+  ] },
+  { id: 'meruem', name: 'Meruem', title: 'König der Chimera-Ameisen', anime: 'Hunter x Hunter', arena: 'Königspalast von Ost-Gorteau', col: '255,225,80', sp: 140, ar: ARENAS.meruem, atk: [
+    (b, r) => { shout(b, 'Schweifhieb'); const a = aimP(b), x = b.x, y = b.y; T('cone', 1, { x, y, a, R: 320, half: 1.35, snd: 'slash', vis: 'slash' }); if (r) later(.55, () => T('cone', 1, { x, y, a: a + Math.PI, R: 320, half: 1.35, snd: 'slash', vis: 'slash' })); return r ? 1.55 : 1; },
+    (b, r) => { shout(b, 'Königssprung'); const n = r ? 3 : 2; for (let i = 0; i < n; i++) later(i, () => { const x = p.x, y = p.y; T('circle', .95, { x, y, R: 165, snd: 'punch', onFire() { if (!b.dead) { b.x = x; b.y = y - 12; } } }); }); return .95 + (n - 1); },
+    (b, r) => { shout(b, 'Rage Blast'); fan(b, r ? 7 : 5, .24, 1.3, { w: 60, snd: 'zap', vis: 'beam' }); return 1.3; },
+    // Streifen wie Reihen auf dem Gungi-Brett: erst die einen, dann die Lücken dazwischen
+    (b, r) => { shout(b, 'Gungi: Kokoriko'); const a = Math.random() < .5 ? 0 : Math.PI / 2, ca = Math.cos(a), sa = Math.sin(a), n = r ? 3 : 2; for (let i = 0; i < n; i++) later(i * .75, () => { for (let k = -4; k <= 4; k++) { const off = k * 176 + (i & 1) * 88; T('line', 1.3, { x: -ca * 700 - sa * off, y: -sa * 700 + ca * off, a, L: 1400, w: 88, snd: 'punch', vis: 'cut' }); } }); return 1.3 + (n - 1) * .75; },
+    (b, r) => { shout(b, 'Photon'); const x = b.x, y = b.y; T('circle', 1.5, { x, y, R: 240, big: true, snd: 'big', onFire() { radial({ x, y }, r ? 12 : 8, rand(0, TAU), 1, { w: 44, snd: 'zap', vis: 'beam' }); } }); return 2.5; },
+  ] },
+);
 function resetWorld() { nextB = null; lastB = null; worldSeed = (Math.random() * 1e6) | 0; curBiome = -1; banner = null; decals = []; room = null; portal = null; nextPortal = PORTAL_EVERY; bossIdx = 0; tele = []; saved = null; dpsAvg = 0; dmgAcc = 0; laters = []; curOwner = null; nextEvent = 60; hordeT = 0; zones = []; orbs = []; zoneT = 30; orbT = 15; broken = new Set(); propT = 0; }
 function enterRoom() {
-  const B = nextB || pick(BOSSES.filter(b => b !== lastB)), tier = 1 + Math.floor(bossIdx / BOSSES.length), dur = Math.min(45, 26 + 4 * bossIdx), hp = 70 * Math.pow(Math.max(t, 60) / 180, 1.6) * dur; // geplante Kampfdauer: 26 s beim 1. Boss, je Boss 4 s mehr, höchstens 45 s
+  const B = nextB || pick(BOSSES.filter(b => b !== lastB)), tier = 1 + Math.floor(bossIdx / 4), dur = Math.min(45, 26 + 4 * bossIdx), hp = 70 * Math.pow(Math.max(t, 60) / 180, 1.6) * dur; // geplante Kampfdauer: 26 s beim 1. Boss, je Boss 4 s mehr, höchstens 45 s
   saved = { x: p.x, y: p.y, enemies, gems, chests, eshots };
   enemies = []; gems = []; chests = []; eshots = []; shots = []; fx = []; allies = []; timers = []; tele = []; decals = []; portal = null;
   p.x = 0; p.y = 200; p.inv = 1.5;
@@ -1993,7 +2334,7 @@ function drawPickups() { // Kraftkreise und Orbs
   }
 }
 function tryDash() {
-  if (state !== 'play' || !p || p.dashCd > 0 || p.rev !== undefined) return;
+  if (state !== 'play' || !p || p.dashCd > 0 || p.rev !== undefined || ultRoot()) return;
   let dx = p.mvx, dy = p.mvy; if (!dx && !dy) { dx = p.face; dy = 0; }
   const l = Math.hypot(dx, dy); p.dvx = dx / l * 1000; p.dvy = dy / l * 1000; p.dashT = .17; p.dashCd = 2.5; p.inv = Math.max(p.inv, .3);
   sfx('slash'); spark(p.x, p.y, 12, '#ffffff', 220, .3, 4);
@@ -2727,7 +3068,17 @@ click('bAgain', () => { if (gacha && gacha.open) summon(); });
 click('bGOk', () => { if (gacha && gacha.open) { gacha = null; setState('pets'); } });
 
 // ---------- Sammlung und Level-Up-Übersicht
-let petGen = 0;
+let petGen = 0, petRole = '', petOwn = false, petSort = false; // Filter im Begleiter-Menü: Generation, Rolle, nur eigene; petSort: höchstes Level zuerst
+// Rolle = Angriffsart des Typs (PT[..].k)
+const ROLE = {
+  heal: { n: 'Heiler', col: '#2f8a4a', d: 'heilt dich regelmäßig, greift nicht an' },
+  burst: { n: 'Bomber', col: '#b3402a', d: 'Explosion am Ziel, starker Flächenschaden, langsam' },
+  zap: { n: 'Kettenblitz', col: '#8a6a10', d: 'springt von Gegner zu Gegner' },
+  shot: { n: 'Schütze', col: '#3a6b8a', d: 'gezielte Geschosse, die Gegner durchschlagen' },
+  fire: { n: 'Flammenwerfer', col: '#c5601a', d: 'langsame Flammen, die alle Gegner durchdringen' },
+  spread: { n: 'Streuer', col: '#5a7a2a', d: 'Fächer aus vielen kleinen Geschossen' },
+};
+const roleTag = k => `<span class="tag" style="background:${ROLE[k].col}">${ROLE[k].n}</span>`;
 const rarTag = P => `<span class="tag" style="background:${RAR[P.rar].col};color:${P.rar === 'L' ? '#1a1420' : '#fff'}">${RAR[P.rar].n}</span>`;
 function petCanvas(d, f, owned) {
   const c = d.querySelector('canvas').getContext('2d'), s = f.sc + .8; c.imageSmoothingEnabled = false; c.fillStyle = 'rgba(0,0,0,.25)'; c.beginPath(); c.ellipse(48, 72, 22, 6, 0, 0, TAU); c.fill();
@@ -2738,21 +3089,31 @@ function showPets() {
   const ids = Object.keys(PETS), own = ids.filter(k => SAVE.pets[k]).length, act = SAVE.active && SAVE.pets[SAVE.active];
   $('ballInfo').textContent = `Pokébälle: ${SAVE.balls} · Beschwören kostet ${SUMMON_COST} · ${own} von ${ids.length} gesammelt`;
   $('rarInfo').innerHTML = 'Chancen: ' + RORDER.map(k => `<b style="color:${RAR[k].col}">${RAR[k].n} ${Math.round(RAR[k].p * 100)} %</b>`).join(' · ');
-  $('ver').textContent = `Version 14 · ${ids.length} Pokémon mit Leveln und Entwicklungen`;
+  $('ver').textContent = `Version 1.0 · ${ids.length} Pokémon mit Leveln und Entwicklungen`;
   $('ballMain').textContent = `Pokébälle: ${SAVE.balls}` + (act ? ` · Begleiter: ${petForm(SAVE.active, act.l, act).name} Lv. ${act.l}` : '');
   const b = $('bSummon'); b.textContent = `Beschwören (${SUMMON_COST} Pokébälle)`; b.disabled = SAVE.balls < SUMMON_COST; b.style.opacity = SAVE.balls < SUMMON_COST ? '.4' : '1';
   if (state !== 'pets') return;
+  const mini = (box, txt, on, fn) => { const t0 = document.createElement('button'); t0.className = 'mini' + (on ? '' : ' sec'); t0.textContent = txt; t0.onclick = () => { fn(); sfx('click'); showPets(); }; box.appendChild(t0); return t0; };
   const tabs = $('petTabs'); tabs.innerHTML = '';
-  for (let g = 0; g <= 9; g++) { const t0 = document.createElement('button'); t0.className = 'mini' + (g === petGen ? '' : ' sec'); t0.textContent = g ? 'Gen ' + g : 'Alle'; t0.onclick = () => { petGen = g; sfx('click'); showPets(); }; tabs.appendChild(t0); }
-  const box = $('petList'); box.innerHTML = '';
-  for (const id of ids) {
-    const P = PETS[id]; if (petGen && P.gen !== petGen) continue;
-    const sv = SAVE.pets[id], f = petForm(id, sv ? sv.l : 1, sv), d = document.createElement('div'); d.className = 'card' + (SAVE.active === id ? ' evo' : '') + (sv ? '' : ' off');
-    d.innerHTML = `<canvas width="96" height="80"></canvas><h3>${sv ? f.name : '???'}</h3>${rarTag(P)} <span class="tag gen">Gen ${P.gen}</span><p class="perk">${sv ? 'Level ' + sv.l : 'Noch nicht beschworen'}</p>${sv ? `<p>${petDesc(f, sv.l)}</p>` : ''}<p class="key">${SAVE.active === id ? 'Aktiv – begleitet dich im Spiel' : sv ? 'Klicken zum Auswählen' : ''}</p>`;
+  for (let g = 0; g <= 9; g++) mini(tabs, g ? 'Gen ' + g : 'Alle', g === petGen, () => { petGen = g; });
+  const roles = $('petRoles'); roles.innerHTML = '';
+  mini(roles, 'Alle Rollen', !petRole, () => { petRole = ''; });
+  for (const k in ROLE) mini(roles, ROLE[k].n, k === petRole, () => { petRole = k; }).title = ROLE[k].d;
+  mini(roles, 'In Besitz', petOwn, () => { petOwn = !petOwn; }).style.marginLeft = '14px';
+  mini(roles, 'Nach Level', petSort, () => { petSort = !petSort; }).title = 'Höchstes Level zuerst, nicht beschworene ans Ende';
+  const box = $('petList'); box.innerHTML = ''; let shown = 0;
+  const lvKey = k => { const v = SAVE.pets[k]; return v ? v.l * PET_KILLS + v.x : -1; }; // sort() ist stabil: bei Gleichstand bleibt die gewohnte Reihenfolge
+  for (const id of petSort ? ids.slice().sort((a, b) => lvKey(b) - lvKey(a)) : ids) {
+    const P = PETS[id], sv = SAVE.pets[id]; if (petGen && P.gen !== petGen || petOwn && !sv) continue;
+    const f = petForm(id, sv ? sv.l : 1, sv), role = PT[f.T].k; if (petRole && role !== petRole) continue; // Rolle der aktuellen Gestalt (Evoli wechselt sie mit der Entwicklung)
+    shown++;
+    const d = document.createElement('div'); d.className = 'card' + (SAVE.active === id ? ' evo' : '') + (sv ? '' : ' off');
+    d.innerHTML = `<canvas width="96" height="80"></canvas><h3>${sv ? f.name : '???'}</h3>${rarTag(P)} <span class="tag gen">Gen ${P.gen}</span> ${roleTag(role)}<p class="perk">${sv ? 'Level ' + sv.l : 'Noch nicht beschworen'}</p>${sv ? `<p>${petDesc(f, sv.l)}</p>` : ''}<p class="key">${SAVE.active === id ? 'Aktiv – begleitet dich im Spiel' : sv ? 'Klicken zum Auswählen' : ''}</p>`;
     petCanvas(d, f, !!sv);
     if (sv) d.onclick = () => { setActive(id); showPets(); };
     box.appendChild(d);
   }
+  $('petCount').textContent = (shown ? `${shown} Pokémon` : petOwn ? 'Du besitzt noch kein Pokémon, das zu diesen Filtern passt.' : 'Kein Pokémon passt zu diesen Filtern.') + (petRole ? ` · ${ROLE[petRole].n}: ${ROLE[petRole].d}` : '');
 }
 function showLv() {
   const ids = Object.keys(PETS).filter(k => SAVE.pets[k]).sort((a, b) => (b === SAVE.active) - (a === SAVE.active) || SAVE.pets[b].l - SAVE.pets[a].l || SAVE.pets[b].x - SAVE.pets[a].x);
@@ -2780,7 +3141,7 @@ if (typeof location !== 'undefined' && location.hash) {
   const hs = location.hash.slice(1), q = {};
   for (const kv of hs.split('&')) { const [a, b] = kv.split('='); q[a] = b; }
   if (hs === 'select') setState('select');
-  else if ('pets' in q) { if (q.draw) { const cnt = {}, seen = new Set(); for (let i = 0; i < +q.draw; i++) { const id = rollPet(); cnt[PETS[id].rar] = (cnt[PETS[id].rar] || 0) + 1; seen.add(id); } const per = {}; for (const k in PETS) { const g = PETS[k].gen + PETS[k].rar; per[g] = (per[g] || 0) + 1; } document.title = 'DRAW ' + JSON.stringify(cnt) + ' arten=' + seen.size + ' gesamt=' + Object.keys(PETS).length + ' ' + JSON.stringify(per); } if (q.balls) SAVE.balls = +q.balls; if (q.own) for (const id of (q.own === 'all' ? Object.keys(PETS) : q.own.split(','))) if (PETS[id]) SAVE.pets[id] = newSv(+q.pl || 1); if (q.sum) { SAVE.balls = 99; setState('pets'); summon(); if (+q.sum > 1) { gacha.t = +q.sum; } } else setState(q.lv ? 'pklvl' : 'pets'); }
+  else if ('pets' in q) { if (q.draw) { const cnt = {}, seen = new Set(); for (let i = 0; i < +q.draw; i++) { const id = rollPet(); cnt[PETS[id].rar] = (cnt[PETS[id].rar] || 0) + 1; seen.add(id); } const per = {}; for (const k in PETS) { const g = PETS[k].gen + PETS[k].rar; per[g] = (per[g] || 0) + 1; } document.title = 'DRAW ' + JSON.stringify(cnt) + ' arten=' + seen.size + ' gesamt=' + Object.keys(PETS).length + ' ' + JSON.stringify(per); } if (q.balls) SAVE.balls = +q.balls; if (q.own) for (const id of (q.own === 'all' ? Object.keys(PETS) : q.own.split(','))) if (PETS[id]) SAVE.pets[id] = newSv(+q.pl || 1); if (ROLE[q.role]) petRole = q.role; if (q.have) petOwn = true; if (q.sort) petSort = true; if (q.lvs) q.lvs.split(',').forEach((v, i) => { const sv = Object.values(SAVE.pets)[i]; if (sv) sv.l = +v; }); if (q.sum) { SAVE.balls = 99; setState('pets'); summon(); if (+q.sum > 1) { gacha.t = +q.sum; } } else setState(q.lv ? 'pklvl' : 'pets'); }
   else if (q.play && CHARS[q.play]) {
     if (q.pet && PETS[q.pet]) { SAVE.pets[q.pet] = newSv(+q.pl || 1); SAVE.pets[q.pet].x = +q.px || 0; SAVE.active = q.pet; }
     newGame(q.play);
@@ -2795,6 +3156,8 @@ if (typeof location !== 'undefined' && location.hash) {
     for (let i = 0; i < n; i++) { if (state !== 'play') { pending = 0; setState('play'); } update(1 / 60); p.hp = p.maxHp * .7; }
     if (q.kill && room) { hit(room.boss, 1e12, 'ranged'); for (let i = 0; i < 300; i++) { if (state !== 'play') { pending = 0; setState('play'); } update(1 / 60); } }
     if (q.max) p.wLvl = 5;
+    if (q.pause) setState('pause');
+    if (q.ult) { p.ult.cd = 0; tryUlt(); for (let i = 0; i < Math.round(+q.ult * 60); i++) { if (state !== 'play') { pending = 0; setState('play'); } update(1 / 60); p.hp = p.maxHp; } }
     if (q.die) { p.hp = -99; update(1 / 60); const n2 = Math.round(+q.die * 60); for (let i = 0; i < n2; i++) { if (state !== 'play') { pending = 0; setState('play'); } update(1 / 60); } }
     if (q.lvl) { pending = 1; showLevelUp(); }
     if (q.sim) { // Bot: läuft im Quadrat, wählt zufällige Fähigkeiten und misst jeden Bosskampf
@@ -2806,11 +3169,18 @@ if (typeof location !== 'undefined' && location.hash) {
 }
 const mqRot = matchMedia('(pointer:coarse) and (orientation:portrait) and (max-width:900px)'); // Handy im Hochformat: Hinweis zum Drehen, Spiel wartet
 let last = performance.now();
+let ultBtnKey = '';
+function updateUltButton() {
+  const ui = ultInfo(), b = $('bUlt'), deg = Math.round(ui.frac * 360), key = ui.st + deg + ui.short;
+  if (key === ultBtnKey) return; ultBtnKey = key;
+  b.style.background = `conic-gradient(${ui.col} ${deg}deg, rgba(42,36,56,.88) 0)`; b.style.opacity = ui.st === 'ready' ? '1' : '.85';
+  b.innerHTML = `<b>ULT</b><small>${ui.short}</small>`; b.title = `${ultOf(p.kind).name}: ${ultOf(p.kind).desc}`;
+}
 function frame(now) {
   const dt = Math.max(0, Math.min(.05, (now - last) / 1000)); last = now;
   if (state === 'play' && !mqRot.matches) update(dt);
   if (state === 'gacha') tickGacha(dt);
-  if (p) { const o = p.dashCd > 0 ? '.4' : '1', b = $('bDash'); if (b.style.opacity !== o) b.style.opacity = o; }
+  if (p) { const o = p.dashCd > 0 ? '.4' : '1', b = $('bDash'); if (b.style.opacity !== o) b.style.opacity = o; if (state === 'play') updateUltButton(); }
   if (state === 'main' || state === 'select' || state === 'pets' || state === 'pklvl' || state === 'gacha' || (state === 'settings' && setReturn === 'main') || !p) drawMenu(now / 1000); else render();
   requestAnimationFrame(frame);
 }

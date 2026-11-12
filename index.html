@@ -48,7 +48,8 @@
     h1{font-size:48px}h2{font-size:28px}
   }
   button.mini{min-width:0;font-size:15px;padding:5px 11px;border-width:3px;box-shadow:0 3px 0 var(--ink)}
-  #petTabs{gap:6px}
+  #petTabs,#petRoles{gap:6px}
+  #petCount{margin:0;text-align:center;opacity:.75;font-size:13px}
   .card.off{opacity:.6;cursor:default}
   .xpb{height:10px;background:var(--ink);border:2px solid var(--ink);border-radius:3px;margin:4px 0 2px;overflow:hidden}.xpb i{display:block;height:100%;background:var(--gold)}
   #pets .card,#pklvl .card{width:170px}
@@ -73,7 +74,38 @@
     .panel{padding:12px 18px}.set{font-size:15px;gap:8px 12px}
     #gc{width:min(240px,46vh)}
   }
+  /* Handy: Zurück-Knopf bleibt oben links stehen, statt am Ende langer Listen zu verschwinden */
+  @media (pointer:coarse),(max-width:700px),(max-height:520px){
+    button.back{position:fixed;left:max(10px,env(safe-area-inset-left));top:10px;z-index:6;min-width:0;font-size:16px;padding:6px 14px;border-width:3px;box-shadow:0 3px 0 var(--ink)}
+    button.back:hover{transform:none}button.back:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+    #chars,#petList,#lvList,#settings .panel{margin-bottom:auto}
+  }
+  @media (max-width:640px){#select,#pets,#pklvl,#settings{padding-top:56px}}
   #touch{display:none}
+  #bUlt{display:none;position:fixed;z-index:5;right:14px;bottom:24px;width:78px;height:78px;min-width:0;padding:0;border-radius:50%;border:4px solid var(--ink);box-shadow:0 4px 0 var(--ink);color:var(--text);line-height:1.1;touch-action:none;-webkit-tap-highlight-color:transparent;background:rgba(42,36,56,.88)}
+  #bUlt b{display:block;font-size:20px;text-shadow:2px 2px 0 var(--ink)}#bUlt small{display:block;font-size:13px;text-shadow:1px 1px 0 var(--ink)}
+  #bUlt:hover{transform:none}#bUlt:active{transform:translateY(2px);box-shadow:0 2px 0 var(--ink)}
+  body[data-state="play"] #bUlt{display:block}
+  @media (pointer:coarse),(max-width:700px){#bUlt{right:112px;bottom:78px}}
+  .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:min(980px,100%);align-items:start;box-sizing:border-box}
+  .pcol{min-width:0;padding:14px 16px;min-width:0}
+  .pcol h4{margin:10px 0 4px;font-size:16px;color:var(--gold)}.pcol h4:first-child{margin-top:0}
+  .pi{display:flex;gap:10px;align-items:center;padding:5px 0;border-top:2px solid rgba(91,79,122,.5);font-size:14px;line-height:1.25}
+  .pi:first-of-type{border-top:0}
+  .pi .ico{flex:0 0 28px;height:28px;margin:0;padding:0;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;box-sizing:border-box}
+  .pi .nm{font-weight:700}.pi .lv{color:var(--gold);margin-left:8px;font-size:13px}.pi p{margin:1px 0 0;font-size:12px;opacity:.8}
+  .ps{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:3px 0;border-top:2px solid rgba(91,79,122,.35)}.ps b{text-align:right;color:var(--gold)}
+  .pbtns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .pbtns button{min-width:0;flex:1 1 130px;font-size:18px;padding:8px 12px}
+  @media (max-width:760px){.pgrid{grid-template-columns:1fr}}
+  @media (max-height:520px){
+    #pause{gap:6px}#pause h2{font-size:20px}
+    .pgrid{gap:8px}.pcol{padding:8px 10px}.pcol h4{font-size:13px;margin:6px 0 2px}
+    .pi{font-size:12px;padding:3px 0;gap:8px}.pi .ico{flex-basis:22px;height:22px;font-size:12px}.pi p{font-size:11px}
+    .ps{font-size:12px;padding:1px 0}
+    .pbtns{margin-bottom:6px;gap:6px}.pbtns button{font-size:14px;padding:4px 8px;flex-basis:100px;border-width:3px;box-shadow:0 3px 0 var(--ink)}
+    #bUlt{width:62px;height:62px}#bUlt b{font-size:16px}#bUlt small{font-size:11px}
+  }
   .tb{position:fixed;z-index:5;min-width:0;padding:0;border-radius:50%;border:3px solid var(--ink);box-shadow:none;touch-action:none;-webkit-tap-highlight-color:transparent}
   .tb:hover,.tb:active{transform:none;filter:none;box-shadow:none}
   #bPause{left:14px;bottom:78px;width:52px;height:52px;font-size:20px;background:rgba(42,36,56,.82);color:var(--text)}
@@ -83,6 +115,7 @@
 </head>
 <body>
 <canvas id="c"></canvas>
+<button id="bUlt" aria-label="Ultimate"><b>ULT</b><small></small></button>
 <div id="touch"><button id="bPause" class="tb" aria-label="Pause">II</button><button id="bDash" class="tb" aria-label="Ausweichen">DASH</button></div>
 
 <div id="main" class="ov on">
@@ -102,7 +135,7 @@
 <div id="select" class="ov">
   <h2>Charakterauswahl</h2>
   <div class="row" id="chars"></div>
-  <button id="bBack1" class="sec">Zurück</button>
+  <button id="bBack1" class="sec back">Zurück</button>
 </div>
 
 <div id="pets" class="ov">
@@ -111,15 +144,17 @@
   <p class="sub" id="rarInfo"></p>
   <button id="bSummon">Beschwören</button>
   <div class="row" id="petTabs"></div>
+  <div class="row" id="petRoles"></div>
+  <p class="key" id="petCount"></p>
   <div class="row" id="petList"></div>
-  <button id="bBack3" class="sec">Zurück</button>
+  <button id="bBack3" class="sec back">Zurück</button>
 </div>
 
 <div id="pklvl" class="ov">
   <h2>Level Up</h2>
   <p class="sub" id="lvInfo" style="max-width:720px"></p>
   <div class="row" id="lvList"></div>
-  <button id="bBack4" class="sec">Zurück</button>
+  <button id="bBack4" class="sec back">Zurück</button>
 </div>
 
 <div id="gacha" class="ov">
@@ -138,7 +173,7 @@
       <label for="vSfx">Effekte</label><input id="vSfx" type="range" min="0" max="100"><span id="vSfxN"></span>
     </div>
   </div>
-  <button id="bBack2" class="sec">Zurück</button>
+  <button id="bBack2" class="sec back">Zurück</button>
 </div>
 
 <div id="lvl" class="ov">
@@ -150,10 +185,16 @@
 
 <div id="pause" class="ov">
   <h2>Pause</h2>
-  <div class="col">
-    <button id="bResume">Weiter</button>
-    <button id="bSet2" class="sec">Einstellungen</button>
-    <button id="bQuit" class="sec">Hauptmenü</button>
+  <div class="pgrid">
+    <div class="panel pcol" id="pItems"></div>
+    <div class="panel pcol">
+      <div class="pbtns">
+        <button id="bResume">Weiter</button>
+        <button id="bSet2" class="sec">Einstellungen</button>
+        <button id="bQuit" class="sec">Aufgeben</button>
+      </div>
+      <div id="pStats"></div>
+    </div>
   </div>
 </div>
 
