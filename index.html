@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Anime Survivors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1a1420;--panel:#2a2438;--panel2:#372f4a;--line:#5b4f7a;--gold:#ffd23c;--text:#f4efff}
+  html,body{margin:0;height:100%;overflow:hidden;background:#14161b;color:var(--text);font-family:"Pixelify Sans","Courier New",monospace;user-select:none}
+  canvas#c{display:block;width:100%;height:100%;touch-action:none;image-rendering:pixelated}
+  .ov{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;gap:16px;background:rgba(14,10,24,.72);padding:20px 16px;box-sizing:border-box;overflow:auto}
+  .ov.on{display:flex}
+  .ov > :first-child{margin-top:auto}.ov > :last-child{margin-bottom:auto}
+  h1{margin:0;font-size:64px;line-height:1;letter-spacing:3px;color:var(--gold);text-shadow:4px 4px 0 #b3202a,8px 8px 0 var(--ink);text-align:center}
+  h2{margin:0;font-size:36px;text-shadow:3px 3px 0 var(--ink)}
+  .sub{opacity:.85;margin:0;text-align:center;font-size:16px}
+  .row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;max-width:1280px}
+  .col{display:flex;flex-direction:column;gap:14px;align-items:center}
+  a.btn{display:inline-block;box-sizing:border-box;text-decoration:none;text-align:center}
+  button,a.btn{font:inherit;font-size:24px;font-weight:700;min-width:260px;padding:12px 26px;border:4px solid var(--ink);background:var(--gold);color:var(--ink);cursor:pointer;box-shadow:0 6px 0 var(--ink);border-radius:4px}
+  button:hover,a.btn:hover{filter:brightness(1.1);transform:translateY(-2px)}
+  button:active,a.btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--ink)}
+  button.sec,a.btn.sec{background:var(--panel2);color:var(--text)}
+  .card{width:188px;background:var(--panel);border:4px solid var(--ink);box-shadow:0 0 0 2px var(--line) inset,0 6px 0 var(--ink);border-radius:4px;padding:12px;cursor:pointer;text-align:center;transition:transform .08s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 0 0 2px var(--gold) inset,0 6px 0 var(--ink)}
+  .card canvas{image-rendering:pixelated;background:#4f9a4c;border:3px solid var(--ink);border-radius:4px}
+  .card h3{margin:6px 0 2px;font-size:20px}
+  .tag{display:inline-block;font-size:12px;padding:1px 8px;border:2px solid var(--ink);background:#555;margin-bottom:4px}
+  .tag.jjk{background:#6a48c4}.tag.opm{background:#c5252f}.tag.bl{background:#d06a10}.tag.dbz{background:#d99a00;color:#1a1420}.tag.aot{background:#4a7a52}.tag.hq{background:#22222a;border-color:#f58a1f}.tag.gen{background:#3a6b8a}.tag.nar{background:#e8771a;color:#1a1420}.tag.jojo{background:#8a3fb0}.tag.hxh{background:#2f8a4a}.tag.vil{background:#7a1020}.tag.sl{background:#3a4ad8}.tag.chi{background:#ff9ec4;color:#1a1420}.tag.uni{background:#1f3550}.tag.evo{background:#ffd23c;color:#1a1420}.card.evo{box-shadow:0 0 0 3px #ffd23c inset,0 6px 0 #1a1420,0 0 24px #ffd23c}.combo{color:#9fe0ff;font-size:12px}
+  .card p{margin:3px 0;font-size:13px;line-height:1.3}
+  .card p.info{color:#bfe8c8;font-size:12px}.card p.mx{color:#ffd23c;font-size:12px}
+  .perk{color:var(--gold)}
+  .key{opacity:.55;font-size:12px}
+  .panel{background:var(--panel);border:4px solid var(--ink);box-shadow:0 0 0 2px var(--line) inset,0 6px 0 var(--ink);padding:22px 26px;border-radius:4px;min-width:min(420px,86vw);box-sizing:border-box}
+  .set{display:grid;grid-template-columns:auto 1fr 48px;gap:12px 14px;align-items:center;font-size:18px}
+  input[type=range]{width:100%;accent-color:var(--gold);height:22px}
+  @media (max-width:640px){
+    .ov{padding:14px 8px;gap:12px}
+    #chars{gap:8px;width:100%}
+    #chars .card{width:calc(50% - 4px);box-sizing:border-box;padding:8px 6px}
+    #chars .card canvas{width:72px;height:75px}
+    #chars .card h3{font-size:16px;margin:4px 0 2px}
+    #chars .card p{font-size:11px;margin:2px 0}
+    #chars .tag{font-size:10px;padding:1px 5px}
+    h1{font-size:48px}h2{font-size:28px}
+  }
+  #touch{display:none}
+  .tb{position:fixed;z-index:5;min-width:0;padding:0;border-radius:50%;border:3px solid var(--ink);box-shadow:none;touch-action:none;-webkit-tap-highlight-color:transparent}
+  .tb:hover,.tb:active{transform:none;filter:none;box-shadow:none}
+  #bPause{left:14px;bottom:78px;width:52px;height:52px;font-size:20px;background:rgba(42,36,56,.82);color:var(--text)}
+  #bDash{right:14px;bottom:78px;width:86px;height:86px;font-size:18px;background:rgba(255,210,60,.88);color:var(--ink)}
+  @media (pointer:coarse),(max-width:700px){body[data-state="play"] #touch{display:block}}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="touch"><button id="bPause" class="tb" aria-label="Pause">II</button><button id="bDash" class="tb" aria-label="Ausweichen">DASH</button></div>
+
+<div id="main" class="ov on">
+  <h1>ANIME<br>SURVIVORS</h1>
+  <p class="sub">Überlebe die Horde.</p>
+  <p class="sub" id="ballMain"></p>
+  <div class="col">
+    <button id="bPlay">Spielen</button>
+    <button id="bSet" class="sec">Einstellungen</button>
+    <button id="bPets" class="sec">Begleiter</button>
+    <a id="bGood" class="btn sec" href="https://www.paypal.me/numng" target="_blank" rel="noopener">Gute Tat</a>
+  </div>
+</div>
+
+<div id="select" class="ov">
+  <h2>Charakterauswahl</h2>
+  <div class="row" id="chars"></div>
+  <button id="bBack1" class="sec">Zurück</button>
+</div>
+
+<div id="pets" class="ov">
+  <h2>Begleiter</h2>
+  <p class="sub" id="ballInfo"></p>
+  <button id="bSummon">Beschwören</button>
+  <div class="row" id="petList"></div>
+  <button id="bBack3" class="sec">Zurück</button>
+</div>
+
+<div id="settings" class="ov">
+  <h2>Einstellungen</h2>
+  <div class="panel">
+    <div class="set">
+      <label for="vMaster">Gesamtlautstärke</label><input id="vMaster" type="range" min="0" max="100"><span id="vMasterN"></span>
+      <label for="vMusic">Musik</label><input id="vMusic" type="range" min="0" max="100"><span id="vMusicN"></span>
+      <label for="vSfx">Effekte</label><input id="vSfx" type="range" min="0" max="100"><span id="vSfxN"></span>
+    </div>
+  </div>
+  <button id="bBack2" class="sec">Zurück</button>
+</div>
+
+<div id="lvl" class="ov">
+  <h2>Level Up!</h2>
+  <p class="sub">Wähle eine Fähigkeit (Klick oder Taste 1–3, R würfelt neu)</p>
+  <div class="row" id="choices"></div>
+  <button id="bReroll" class="sec">Neu würfeln</button>
+</div>
+
+<div id="pause" class="ov">
+  <h2>Pause</h2>
+  <div class="col">
+    <button id="bResume">Weiter</button>
+    <button id="bSet2" class="sec">Einstellungen</button>
+    <button id="bQuit" class="sec">Hauptmenü</button>
+  </div>
+</div>
+
+<div id="over" class="ov">
+  <h2>Besiegt</h2>
+  <p class="sub" id="stats"></p>
+  <div class="col">
+    <button id="bRetry">Nochmal</button>
+    <button id="bMenu" class="sec">Hauptmenü</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
