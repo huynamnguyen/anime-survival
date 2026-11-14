@@ -123,7 +123,47 @@
   #bPause{left:14px;bottom:78px;width:52px;height:52px;font-size:20px;background:rgba(42,36,56,.82);color:var(--text)}
   #bDash{right:14px;bottom:78px;width:86px;height:86px;font-size:18px;background:rgba(255,210,60,.88);color:var(--ink)}
   @media (pointer:coarse),(max-width:700px){body[data-state="play"] #touch{display:block}}
-</style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@1,800;1,900&family=JetBrains+Mono:wght@500;700&display=swap');
+#main{background:radial-gradient(ellipse at 50% 55%,#2a1206 0,#0b0a0c 55%,#050506 100%);padding:0;display:none;font-family:Inter,sans-serif;font-style:italic;font-weight:900}
+#main.on{display:block}
+#main button,#main a.mBtn{border-radius:0;min-width:0;box-shadow:none}
+.mTop{position:absolute;top:24px;left:32px;right:32px;display:flex;justify-content:space-between;align-items:flex-start}
+.mProf{display:flex;gap:16px;align-items:center}
+.mAv{width:54px;height:54px;border:2px solid #2a2a32;background:#111;display:grid;place-items:center;font-size:20px}
+.mName{font-size:22px;letter-spacing:.5px}
+.mLv{display:flex;align-items:center;gap:10px;margin-top:6px}.mLv i{width:96px;height:5px;background:#26262c;position:relative}.mLv i:after{content:"";position:absolute;inset:0;width:40%;background:#ff4d00}
+.mLv span{font:500 10px "JetBrains Mono",monospace;color:#777;letter-spacing:1px}
+.mChips{display:flex;gap:24px;align-items:center}
+.chip{display:flex;align-items:center;gap:20px;height:88px;padding:0 36px;border:2px solid #23232a;background:#0e0e11;font:700 30px "JetBrains Mono",monospace;font-style:normal}
+.dot{width:24px;height:24px;border-radius:50%;background:#ffc400}.dot.v{background:#a64dff;border-radius:2px;transform:rotate(45deg)}
+.gear{width:88px;height:88px;border:2px solid #23232a;background:#0e0e11;color:#aaa;font-size:44px;cursor:pointer;padding:0}
+.mLeft{position:absolute;left:32px;top:128px;width:276px;display:flex;flex-direction:column;gap:16px;bottom:32px}.mCard.news{flex:none!important;height:min(340px,38vh);margin-top:20px}
+.mCard{border:1px solid #1c1c22;border-left:3px solid;background:#0b0b0d;padding:16px 20px}
+.mCard.gold{border-left-color:#ffc400}.mCard.vio{border-left-color:#a64dff}
+.mCard small{display:flex;justify-content:space-between;font:500 10px "JetBrains Mono",monospace;font-style:normal;letter-spacing:1.5px;color:#777;margin-bottom:6px}.mCard small em{font-style:normal;color:#a64dff}
+.mCard b{font-size:20px}
+.mCard.news{flex:1;border:1px solid #1c1c22;display:flex;flex-direction:column;padding:20px}
+.nBody{flex:1;margin-top:10px;border:1px solid #1c1c22;background:linear-gradient(180deg,#111 0,#050505 100%);display:flex;align-items:flex-end;padding:12px}.nBody b{font-size:14px;line-height:1.3}
+.mCenter{position:absolute;left:310px;right:340px;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center}#petLine{position:relative;margin-top:18px;font:700 14px "JetBrains Mono",monospace;font-style:normal;letter-spacing:1px;color:#9a9aa3;text-align:center}
+.ghost{position:absolute;font-size:30vw;color:#fff;opacity:.035;line-height:1;white-space:nowrap;letter-spacing:-.04em}
+#menuChar{position:relative;height:min(62vh,520px);aspect-ratio:340/360;image-rendering:pixelated;filter:drop-shadow(0 0 40px rgba(255,77,0,.25))}
+.mRight{position:absolute;right:32px;bottom:48px;width:340px;display:flex;flex-direction:column;gap:12px}
+.mBtn{display:flex;justify-content:space-between;align-items:center;height:62px;padding:0 24px;background:#141417;border:1px solid #23232a;color:#d8d8dc;font-size:19px;transform:skewX(-8deg);text-decoration:none;cursor:pointer;box-sizing:border-box}
+.mBtn>*{transform:skewX(8deg)}.mBtn em{font:700 12px "JetBrains Mono",monospace;font-style:normal;color:#666;letter-spacing:1px}
+.mBtn:hover{background:#1d1d22;color:#fff}
+.mStart{display:flex;justify-content:space-between;align-items:center;height:104px;padding:0 28px;margin-top:10px;background:#ff4d00;border:0;color:#111;transform:skewX(-8deg);cursor:pointer;box-shadow:0 0 50px rgba(255,77,0,.35)!important;position:relative;text-align:left}
+.mStart span{font-size:38px;letter-spacing:2px;transform:skewX(8deg);display:block}.mStart small{position:absolute;left:36px;bottom:16px;font:500 10px "JetBrains Mono",monospace;font-style:normal;letter-spacing:1.5px;color:#5a1a00;transform:skewX(8deg)}.mStart i{font-size:34px;transform:skewX(8deg)}
+@media (max-height:520px){
+ .mTop{top:10px;left:14px;right:14px}.mAv{width:38px;height:38px;font-size:14px}.mName{font-size:15px}.mLv span{display:none}
+ .chip{height:32px;padding:0 10px;font-size:11px}.gear{width:32px;height:32px;font-size:16px}.mChips{gap:8px}
+ .mLeft{left:14px;top:62px;width:170px;gap:8px;bottom:14px}.mCard{padding:8px 12px}.mCard b{font-size:13px}.mCard small{font-size:8px;margin-bottom:2px}
+ .mCard.news{padding:10px}.nBody{padding:8px}.nBody b{font-size:10px}
+ .mCenter{left:190px;right:210px}#menuChar{height:78vh}
+ .mRight{right:14px;bottom:14px;width:190px;gap:7px}.mBtn{height:36px;padding:0 14px;font-size:13px}.mBtn em{font-size:10px}
+ .mStart{height:64px;padding:0 16px;margin-top:4px}.mStart span{font-size:24px}.mStart small{left:20px;bottom:8px;font-size:7px}.mStart i{font-size:24px}
+}
+.mCard.blue{border-left-color:#1e90ff;display:block;text-decoration:none;color:inherit;cursor:pointer}.mCard.blue:hover{background:#12141a}.mCard.red{border-left-color:#e5252f;display:block;width:100%;text-align:left;color:inherit;font:inherit;cursor:pointer}.mCard.red:hover{background:#14100f}.mCard.red small{display:flex}.ghost{overflow:hidden}.mBtn span{white-space:nowrap}.chip span{white-space:nowrap}.mCenter{overflow:hidden}@media (max-height:520px){.mCard.news{height:104px;margin-top:6px}#petLine{font-size:10px;margin-top:6px}.chip{height:32px;padding:0 10px;font-size:11px;border-width:1px;gap:10px}.dot{width:12px;height:12px}.gear{width:32px;height:32px;font-size:16px;border-width:1px}.mChips{gap:8px}#charName{display:none}.mBtn span{font-size:12px}.mLeft{gap:8px}}</style>
 </head>
 <body>
 <canvas id="c"></canvas>
@@ -131,16 +171,21 @@
 <div id="touch"><button id="bPause" class="tb" aria-label="Pause">II</button><button id="bDash" class="tb" aria-label="Ausweichen">DASH</button></div>
 
 <div id="main" class="ov on">
-  <h1>ANIME <br>SURVIVORS</h1>
-  <p class="sub">Überlebe die Horde.</p>
-  <p class="sub" id="ballMain"></p>
-  <p class="key" id="ver"></p>
-  <div class="col">
-    <button id="bPlay">Spielen</button>
-    <button id="bSet" class="sec">Einstellungen</button>
-    <button id="bPets" class="sec">Begleiter</button>
-    <button id="bLv" class="sec">Level Up</button>
-    <a id="bGood" class="btn sec" href="https://www.paypal.me/numng" target="_blank" rel="noopener">Gute Tat</a>
+  <div class="mTop">
+    <div class="mProf"><div class="mAv">P1</div><div><div class="mName">ANIME SURVIVOR</div><div class="mLv"><i></i><span id="ver"></span></div></div></div>
+    <div class="mChips"><div class="chip"><b class="dot"></b><span id="ballMain"></span></div><button id="bSet" class="gear" aria-label="Einstellungen">&#9881;</button></div>
+  </div>
+  <div class="mLeft">
+    <a id="bGood" class="mCard blue" href="https://www.paypal.me/numng" target="_blank" rel="noopener"><small>UNTERSTÜTZEN</small><b>GUTE TAT</b></a>
+    <button id="bRank" class="mCard red" type="button"><small>BALD VERFÜGBAR</small><b>BESTENLISTE</b></button>
+    <div class="mCard news"><small>NEWS</small><div class="nBody"><b>NEUE MAPS &amp; CHARAKTERE HINZUGEFÜGT!</b></div></div>
+  </div>
+  <div class="mCenter"><div class="ghost">GOJO</div><canvas id="menuChar" width="340" height="360"></canvas><div id="petLine"></div></div>
+  <div class="mRight">
+    <button id="bPets" class="mBtn"><span>BEGLEITER</span><em>&rarr;</em></button>
+    <button id="bLv" class="mBtn"><span>LEVEL UP</span><em>&rarr;</em></button>
+    <button id="bChar" class="mBtn"><span>CHARAKTER AUSWÄHLEN</span><em id="charName"></em></button>
+    <button id="bPlay" class="mStart"><span>SPIELEN</span><small>ÜBERLEBE DIE HORDE</small><i>&raquo;</i></button>
   </div>
 </div>
 

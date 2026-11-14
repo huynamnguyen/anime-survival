@@ -1670,7 +1670,7 @@ addEventListener('keydown', e => {
   else if (state === 'levelup' && k === 'r' && !e.repeat) reroll();
   else if (k === 'p' || k === 'escape') {
     if (state === 'play') setState('pause'); else if (state === 'pause') setState('play');
-    else if (state === 'stages') setState('select'); else if (state === 'select' || state === 'pets') setState('main'); else if (state === 'settings') setState(setReturn);
+    else if (state === 'stages' || state === 'select' || state === 'pets') setState('main'); else if (state === 'settings') setState(setReturn);
   }
   if (k.startsWith('arrow') || k === ' ') e.preventDefault();
 });
@@ -2333,7 +2333,7 @@ const previews = [];
 for (const id in CHARS) {
   const c = CHARS[id], d = document.createElement('div'); d.className = 'card';
   d.innerHTML = `<canvas width="96" height="100"></canvas><h3>${c.name}</h3><span class="tag ${c.tag}">${c.anime}</span>${c.villain ? ' <span class="tag vil">Bösewicht</span>' : ''}<p><b>${c.weapon}</b><br>${c.wdesc}</p><p class="perk">${c.perk}</p><p class="key">Leben ${c.hp + 20} · Tempo ${c.speed}</p>`;
-  d.dataset.series = c.series; d.onclick = () => { sfx('click'); pickedKind = id; setState('stages'); };
+  d.dataset.series = c.series; d.onclick = () => { sfx('click'); pickedKind = id; SAVE.char = id; saveGame(); setState('main'); };
   $('chars').appendChild(d);
   const g = d.querySelector('canvas').getContext('2d'); g.imageSmoothingEnabled = false;
   previews.push({ id, c: g });
@@ -2350,7 +2350,14 @@ function setCharFilter(f) {
   }
   setCharFilter('Alle');
 }
+let menuCharShown = null;
 function drawMenu(time) {
+  if (state === 'main') {
+    const mc = $('menuChar').getContext('2d'); mc.clearRect(0, 0, 340, 360); mc.imageSmoothingEnabled = false;
+    if (menuCharShown !== pickedKind) { menuCharShown = pickedKind; const nm = CHARS[pickedKind].name; $('charName').textContent = nm.split(' ')[0].toUpperCase(); document.querySelector('#main .ghost').textContent = nm.split(' ')[0].toUpperCase(); }
+    mc.fillStyle = 'rgba(0,0,0,.35)'; mc.beginPath(); mc.ellipse(170, 335, 60, 14, 0, 0, TAU); mc.fill();
+    drawChar(mc, LOOK[pickedKind], 170, 335, 7, 1, time, false, (time % 3) < .35, 'n'); return;
+  }
   drawGround(time * 24, time * 10, null);
   if (state === 'select') for (const pv of previews) {
     const c = pv.c; c.clearRect(0, 0, 96, 100);
@@ -2359,12 +2366,14 @@ function drawMenu(time) {
   }
 }
 const click = (id, fn) => { $(id).onclick = () => { initAudio(); sfx('click'); fn(); }; };
-click('bPlay', () => setState('select'));
+click('bPlay', () => setState('stages'));
+click('bChar', () => setState('select'));
+click('bRank', () => { });
 click('bSet', () => { setReturn = 'main'; setState('settings'); });
 click('bGood', () => { }); // echter Link in index.html, hier nur der Klick-Ton
 click('bSet2', () => { setReturn = 'pause'; setState('settings'); });
 click('bBack1', () => setState('main'));
-click('bBack5', () => setState('select'));
+click('bBack5', () => setState('main'));
 click('bBack2', () => setState(setReturn));
 click('bResume', () => setState('play'));
 click('bQuit', () => { bankRun(); resetGameState(); setState('main'); });
@@ -3961,6 +3970,7 @@ function drawRevive() {
 // ================================================================ Pokébälle & Begleiter (Spielstand liegt im Browser, localStorage)
 const SAVE = { balls: 0, pets: {}, active: null };
 try { Object.assign(SAVE, JSON.parse(localStorage.getItem('animeSurvivorsSave') || '{}')); } catch (e) { }
+if (SAVE.char && CHARS[SAVE.char]) pickedKind = SAVE.char;
 function saveGame() { try { localStorage.setItem('animeSurvivorsSave', JSON.stringify(SAVE)); } catch (e) { } }
 let runBalls = 0, pet = null, petSaveT = 0;
 const SUMMON_COST = 3, PET_MAXLV = 100, PET_KILLS = 500; // ein besiegter Gegner = 0,2 % eines Levels
@@ -4438,8 +4448,9 @@ function showPets() {
   const ids = Object.keys(PETS), own = ids.filter(k => SAVE.pets[k]).length, act = SAVE.active && SAVE.pets[SAVE.active];
   $('ballInfo').textContent = `Pokébälle: ${SAVE.balls} · Beschwören kostet ${SUMMON_COST} · ${own} von ${ids.length} gesammelt`;
   $('rarInfo').innerHTML = 'Chancen: ' + RORDER.map(k => `<b style="color:${RAR[k].col}">${RAR[k].n} ${Math.round(RAR[k].p * 100)} %</b>`).join(' · ');
-  $('ver').textContent = `Version 1.0 · ${ids.length} Pokémon mit Leveln und Entwicklungen`;
-  $('ballMain').textContent = `Pokébälle: ${SAVE.balls}` + (act ? ` · Begleiter: ${petForm(SAVE.active, act.l, act).name} Lv. ${act.l}` : '');
+  $('ver').textContent = `Version 1.0 · ${ids.length} Pokémon`;
+  $('petLine').textContent = act ? `Begleiter: ${petForm(SAVE.active, act.l, act).name} Lv. ${act.l}` : 'Kein Begleiter ausgerüstet';
+  $('ballMain').textContent = `Pokébälle: ${SAVE.balls}`;
   const b = $('bSummon'); b.textContent = `Beschwören (${SUMMON_COST} Pokébälle)`; b.disabled = SAVE.balls < SUMMON_COST; b.style.opacity = SAVE.balls < SUMMON_COST ? '.4' : '1';
   if (state !== 'pets') return;
   const mini = (box, txt, on, fn) => { const t0 = document.createElement('button'); t0.className = 'mini' + (on ? '' : ' sec'); t0.textContent = txt; t0.onclick = () => { fn(); sfx('click'); showPets(); }; box.appendChild(t0); return t0; };
